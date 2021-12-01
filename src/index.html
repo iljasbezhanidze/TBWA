@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>New site</title>
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <main class="b-page">
+    <div class="b-page__header">
+      <div class="b-page__container-header">
+        @include('partials/header.html')
+      </div>
+    </div>
+    <div class="b-main b-page__main">
+      <section class="b-main__section b-main__section_pad-none">
+        <div class="b-main__container b-main__container_full-screen">
+          @include('partials/first-screen.html')
+        </div>
+      </section>
+      <section class="b-main__section">
+        <div class="b-main__container">
+          @include('partials/about-section.html')
+        </div>
+      </section>
+      <section class="b-main__section">
+        <div class="b-main__container">
+          @include('partials/eccentricity-section.html')
+        </div>
+      </section>
+      <!-- projects start-->
+     <div class="b-projects b-main__part">
+        <section class="b-projects__section b-projects__section_pad-none">
+          <div class="b-projects__container b-projects__container_large">
+            <div class="b-projects__container">
+              @include('partials/image-imposition.html')
+            </div>
+          </div>
+        </section>
+        <section class="b-projects__section b-projects__section_pad-none">
+          <div class="b-projects__container b-projects__container_large">
+            <div class="b-projects__container">
+              @include('partials/image-imposition2.html')
+            </div>
+          </div>
+        </section>
+        <section class="b-projects__section b-projects__section_pad-none">
+          <div class="b-projects__container b-projects__container_large">
+            <div class="b-projects__container">
+              @include('partials/image-imposition3.html')
+            </div>
+          </div>
+        </section>
+        <div class="b-projects__section">
+          <a class="b-btn b-btn_yellow b-projects_btn-more" href="#">
+            View All Projects
+          </a>
+        </div>
+     </div>
+     <!-- ^^^ projects end ^^^-->
+
+      <section class="b-main__section b-main__section_pad-none">
+        <div class="b-main__container b-main__container_large">
+          <div class="b-diagonal b-diagonal_home-page">
+            <img class="b-diagonal__img" src="img/imposition4.jpg" alt="background">
+            <div class="b-diagonal__section">
+              <div class="b-diagonal__container">
+                @include('partials/diagonal-image.html')
+              </div>
+            </div>
+          </div>
+          </div>
+      </section>
+      <section class="b-main__section">
+        <div class="b-main__container">
+          @include('partials/diff-size-imgs.html')
+        </div>
+      </section>
+    </div>
+    <div class="b-page__footer">
+      <div class="b-page__container-footer">@include('partials/footer.html')</div>
+    </div>
+  </main>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

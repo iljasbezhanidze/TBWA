@@ -1,0 +1,39 @@
+.b-menu {
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120%;
+  height: 100vh;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 13% 100%);
+  transform: translate3d(100vw, 0, 0);
+  transition: transform .4s cubic-bezier(0, 0, 0.36, 1.35);
+}
+
+.b-menu.b-toggle {
+  transform: translate3d(0, 0, 0);
+}
+
+.b-menu__wrapper {}
+
+.b-menu__list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 140px;
+}
+
+.b-menu__list-item {
+  width: 100%;
+  transition: all .2s;
+
+  .b-menu__list-link {
+    font-size: 64px;
+    font-weight: 700;
+
+  }
+  &:hover {
+    color: #FECC00;
+    transform: translateX(15px);
+  }
+
+}
