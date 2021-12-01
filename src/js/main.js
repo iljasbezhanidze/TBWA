@@ -8,14 +8,30 @@ const impositionTopImage = document.querySelectorAll('.b-imposition__main-img')
 //menu toggler
 burgerButton.onclick = () => menu.classList.toggle('b-toggle')
 
+
+//watching for menu 
+const observer = new MutationObserver(containClass)
+observer.observe(menu, {'attributes': true})
+
+
+//block scroll body
+function containClass() {
+  if(menu.classList.contains('b-toggle')) {
+    document.body.style.overflow = 'hidden'
+  }
+  else document.body.style.overflow = 'auto'
+}
+
+
 //cascade style menu items
 for (let i = 0, amount = 0; i < menuItems.length; i++, amount += 30) {
   menuItems[i].style.paddingLeft = `${amount}px`
 }
 
-//slider width different size pictures
+
+//slider (different size pictures)
 var mySwiper = new Swiper(".mySwiper_team", {slidesPerView: 'auto'});
 
-//init & destroy slider depending on viewport width
-window.innerWidth < 800 ? mySwiper() : mySwiper.destroy()
 
+//init & destroy slider (different size pictures) depending on viewport width
+window.innerWidth < 800 ? mySwiper() : mySwiper.destroy()
