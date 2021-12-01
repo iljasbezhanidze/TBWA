@@ -1,24 +1,22 @@
 const menuItems = document.querySelectorAll('.b-menu__list-item')
 const burgerButton = document.querySelector('.b-burger')
-const menu = document.querySelector('.b-menu')
+const header = document.querySelector('.b-header')
 const impositionBlocks = document.querySelectorAll('.b-imposition')
 const impositionTextInner = document.querySelectorAll('.b-imposition__inner')
 const impositionTopImage = document.querySelectorAll('.b-imposition__main-img')
 
 //menu toggler
-burgerButton.onclick = () => menu.classList.toggle('b-toggle')
+burgerButton.onclick = () => header.classList.toggle('b-toggle')
 
 
 //watching for menu 
 const observer = new MutationObserver(containClass)
-observer.observe(menu, {'attributes': true})
+observer.observe(header, {'attributes': true})
 
 
 //block scroll body
 function containClass() {
-  if(menu.classList.contains('b-toggle')) {
-    document.body.style.overflow = 'hidden'
-  }
+  if(header.classList.contains('b-toggle')) document.body.style.overflow = 'hidden'
   else document.body.style.overflow = 'auto'
 }
 

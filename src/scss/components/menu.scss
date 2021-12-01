@@ -3,20 +3,65 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 120%;
+  width: 107%;
   height: 100vh;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 13% 100%);
   transform: translate3d(100vw, 0, 0);
   transition: transform .4s cubic-bezier(0, 0, 0.36, 1.35);
+  display: flex;
+  justify-content: space-between;
+  overflow-y: auto !important;
+
+  &__contacts {}
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-end;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  &__contacts {
+    margin: 0 auto;
+  }
 }
 
-.b-menu.b-toggle {
+.b-header.b-toggle .b-menu {
   transform: translate3d(0, 0, 0);
 }
 
-.b-menu.b-toggle {
-  
+.b-header.b-toggle .b-burger__line {
+  transform-origin: center;
+  transition: all .2s;
 }
+
+.b-header .b-burger__line:first-child,
+.b-header .b-burger__line:last-child {
+  transform: rotate(0) translate(0, 0);
+  transition: all .2s;
+}
+
+.b-header.b-toggle .b-burger__line:first-child {
+  transform: rotate(45deg) translate(9px, 10px);
+}
+
+.b-header.b-toggle .b-burger__line:last-child {
+  transform: rotate(-45deg) translate(2px, -4px);
+}
+
+@media(max-width:1100px) {
+  .b-header.b-toggle .b-burger__line:first-child {
+    transform: rotate(45deg) translate(6px, 9px);
+  }
+
+  .b-header.b-toggle .b-burger__line:last-child {
+    transform: rotate(-45deg) translate(1, -1px);
+  }
+}
+
+
 
 .b-menu__wrapper {}
 
@@ -31,13 +76,194 @@
   transition: all .2s;
 
   .b-menu__list-link {
-    font-size: 64px;
+    font-size: 6.4vh;
     font-weight: 700;
 
   }
+
   &:hover {
     color: #FECC00;
     transform: translateX(15px);
   }
+}
 
+
+.b-communications {
+  display: flex;
+  flex-direction: column;
+}
+
+.b-communications_header {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.b-communications_footer {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.b-contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.b-communications_header .b-contacts {
+  align-items: flex-end;
+}
+
+.b-communications_footer .b-contacts {
+  align-items: flex-start;
+}
+
+
+
+.b-socials {
+  display: flex;
+}
+
+.b-socials__link {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  display: flex;
+  transition: all .2s;
+
+  &:hover {
+    background-color: #FECC00;
+  }
+}
+
+.b-socials__link:not(:last-child) {
+  margin-right: 20px;
+}
+
+.b-socilas__icon {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+
+.b-contacts__address {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 20px;
+
+  &:hover {
+    opacity: .75;
+  }
+}
+
+.b-contacts__tel {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+
+  &:hover {
+    opacity: .75;
+  }
+}
+
+.b-contacts__email {
+  font-size: 24px;
+  font-weight: 700;
+
+  &:hover {
+    opacity: .75;
+  }
+}
+
+.b-communications__top {
+  margin-bottom: 40px;
+}
+
+@media(max-width:1100px) {
+  .b-contacts__address {
+    max-width: 260px;
+  }
+
+  .b-contacts__tel,
+  .b-contacts__email {
+    font-size: 20px;
+  }
+
+  .b-menu__list {
+    padding-left: 100px;
+  }
+}
+
+@media(max-width:900px) {
+  .b-menu {
+    clip-path: none;
+  }
+
+  .b-menu__list-item {
+    padding: 0 !important;
+  }
+
+  .b-menu__wrapper {
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .b-menu__list-item {
+    width: 100%;
+
+    &:hover {
+      transform: translateX(0);
+    }
+  }
+
+  .b-menu__list-item .b-menu__list-link {
+    font-size: 24px;
+    width: 100%;
+  }
+
+  .b-menu__list {
+    width: 100%;
+    padding-left: 0;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .b-communications {
+    align-items: center;
+  }
+
+  .b-communications .b-contacts {
+    align-items: center;
+  }
+
+  .b-contacts__address {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .b-communications__top {
+    margin-bottom: 60px;
+  }
+
+  .b-header__logo {
+    z-index: 9999;
+  }
+
+  .b-contacts__tel {
+    font-size: 18px;
+  }
+
+  .b-contacts__email {
+    margin-bottom: 15px;
+  }
+}
+
+@media(max-height: 700px){
+  .b-header.b-toggle .b-menu {
+    padding-top: 150px;
+  }
 }
