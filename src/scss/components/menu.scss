@@ -261,9 +261,6 @@
 }
 
 @media(max-height: 700px) {
-  .b-menu__wrapper {
-    padding-top: 15vh;
-  }
 
   .b-communications__bottom {
     padding-bottom: 50px;
@@ -279,8 +276,15 @@
   .b-header.b-toggle .b-burger__line:last-child {
     transform: rotate(-45deg) translate(0px, -5px);
   }
+}
 
+@media(max-height: 700px) {
   .b-menu__wrapper {
-    padding-top: 30vh;
+    padding-top: 150px !important;
+  }
+}
+@media(max-height: 630px) {
+  .b-menu__wrapper {
+    padding-top: 250px !important;
   }
 }

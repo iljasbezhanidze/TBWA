@@ -40,8 +40,18 @@ body {
   padding: 2.1vw;
 }
 
-.b-page__container-footer {
-  padding: 0 240px 60px;
+.b-page__footer {
+  padding: 40px 30px 60px 30px;
+  display: flex;
+  justify-content: center;
+
+  @media(max-width:900px){
+    background-color: #F2F2F2;
+      padding-top: 120px;
+  }
+  @media(max-width:700px){
+      padding-top: 90px;
+  }
 }
 
 .b-page__main {}
@@ -95,6 +105,7 @@ body {
   --width-container: 1440px;
 }
 
+.b-page__container-footer,
 .b-diagonal__container,
 .b-projects__container,
 .b-main__container {
@@ -139,7 +150,8 @@ body {
   clip-path: polygon(0% 0%, 87% 0%, 100% 100%, 13% 100%);
   white-space: nowrap;
   text-align: center;
-  transition: all .3s cubic-bezier(0, 0, 1, 0.24);;
+  transition: all .3s cubic-bezier(0, 0, 1, 0.24);
+  ;
 
   &:hover {
     background-color: #FECC00;
@@ -161,7 +173,8 @@ body {
   white-space: nowrap;
   text-align: center;
   flex-grow: 0;
-  transition:  all .3s cubic-bezier(0, 0, 1, 0.24);;
+  transition: all .3s cubic-bezier(0, 0, 1, 0.24);
+  ;
 
   &:hover {
     background-color: #000;
@@ -198,17 +211,17 @@ body {
   margin: 0 auto;
 }
 
-@media(max-width:600px){
+@media(max-width:600px) {
   .b-main__section {
     padding-top: 90px;
   }
+
   .b-main__section:first-child,
   .b-main__section:last-child {
     padding-top: 0;
   }
-  .b-main__section:nth-child(1){
+
+  .b-main__section:nth-child(1) {
     padding-bottom: 0;
   }
- 
 }
-
