@@ -17,21 +17,68 @@
 </head>
 
 <body>
-  <main class="b-page">
+  <main class="b-page b-page_about">
     <div class="b-page__header">
       <div class="b-page__container-header">
         @include('partials/header.html')
       </div>
     </div>
     <div class="b-main b-page__main">
-      <section class="b-main__section">
-        <div class="b-main__container">
-          @include('partials/first-screen.html')
+      <section class="b-main__section b-main__section_pad-none">
+        <div class="b-main__container b-main__container_full-screen">
+          <div class="b-first-screen b-first-screen_main-page">
+            <div class="b-media b-first-screen__media">
+              <img class="b-media__item" src="./img/first-screen.jpg" alt="media">
+            </div>
+            <div class="b-first-screen__inner">
+              <h1 class="b-main-title b-first-screen__title">About Us</h1>
+              <span class="b-first-screen__subtitle">— Steve Jobs</span>
+              <a class="b-btn b-first-screen__button" href="#">Watch</a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
+    <section class="b-main__section b-main__section_pad-none">
+      <div class="b-main__container b-main__container_large">
+        <div class="b-diagonal b-diagonal_home-page">
+          <img class="b-diagonal__img" src="img/imposition4.jpg" alt="background">
+          <div class="b-diagonal__section">
+            <div class="b-diagonal__container">
+              <div class="b-diagonal__content b-diagonal__content_disruption">
+                <h2 class="b-diagonal__title b-title">We Hate Boring</h2>
+                <div class="b-diagonal__descripption">
+                  We develop business-changing, culture-defining and award-winning ideas for brands. And we’ve got the hardware to prove it.  
+                  Named Adweek's 2018 Global Agency of the Year, we have been recognized with top honors from every major creative award show, including Cannes Lions, Clios, D&AD, Effies, Webbys and the Emmy awards.  
+                </div>
+                <div class="b-btn b-btn_yellow b-diagonal__btn">More on Disruption</div>
+                <a class="b-diagonal__link"  href="#" >Download the Edges</a>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        </div>
+    </section>
+    <section class="b-main__section">
+      <div class="b-main__container">
+        @include('partials/blog-slider.html')
+      </div>
+    </section>
+    <section class="b-main__section">
+      <div class="b-main__container">
+        @include('partials/diff-size-imgs.html')
+      </div>
+    </section>
+    <section class="b-main__section">
+      <div class="b-main__container">
+        @include('partials/contact-form.html')
+      </div>
+    </section>
     <div class="b-page__footer">
-      <div class="b-page__container-footer">@include('partials/footer.html')</div>
+      <div class="b-page__container-footer">
+        @include('partials/footer.html')
+      </div>
     </div>
   </main>
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>

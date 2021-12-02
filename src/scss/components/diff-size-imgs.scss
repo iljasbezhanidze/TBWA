@@ -115,6 +115,7 @@
   }
 }
 
+
 @media(max-width:800px) {
   .mySwiper_team {
     position: relative;
@@ -157,7 +158,7 @@
     max-width: 44.1vw;
   }
 
-  .swiper-slide {
+  .swiper-slide:not(.mySwiperBlog .swiper-slide) {
     transform: translateX(57vw) scale(0.9);
     &:last-child {
       padding-right: 4vw;
