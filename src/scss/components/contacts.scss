@@ -1,0 +1,144 @@
+.b-contacts-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  column-gap: 40px;
+}
+
+.b-contacts-section__title {}
+
+.b-contacts-block {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 60px;
+}
+
+.b-contacts-section__wrapper {
+  max-width: 940px;
+}
+
+.b-contacts-block__item {
+  flex: 1 0 45%;
+  margin-bottom: 60px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.b-contacts-block__item-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.b-contacts-block__address {}
+
+.b-contacts-block__tel {}
+
+.b-contacts-block__email {}
+
+.b-contacts-block__links {}
+
+.b-socials__link {}
+
+.b-socilas__icon {}
+
+.b-contacts-block__map,
+.b-contacts-block__info {
+  font-size: 24px;
+  font-weight: 550;
+  transition: opacity .2s;
+
+  &:hover {
+    opacity: .75;
+  }
+}
+
+@media(max-width:1300px) {
+  .b-contacts-block__item-title {
+    font-size: 38px;
+  }
+
+  .b-contacts-block__map,
+  .b-contacts-block__info {
+    font-size: 20px;
+  }
+
+  .b-contacts-block__item {
+    max-width: 300px;
+  }
+
+  .b-contacts-section__wrapper {
+    max-width: 662px;
+  }
+}
+
+@media(max-width:1000px) {
+  .b-contacts-block__item-title {
+    font-size: 32px;
+  }
+
+  .b-contacts-block__map,
+  .b-contacts-block__info {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .b-contacts-block__item {
+    max-width: 250px;
+  }
+
+  .b-contacts-section__wrapper {
+    max-width: 562px;
+  }
+}
+
+@media(max-width:900px) {
+  .b-contacts-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .b-contacts-block__item-title {
+    font-size: 32px;
+  }
+
+  .b-contacts-section__title {
+    margin-bottom: 40px;
+  }
+
+  .b-contacts-block__item {
+    align-items: center;
+    text-align: center;
+    max-width: 250px;
+  }
+}
+
+
+@media(max-width:620px) {
+  .b-contacts-block {
+    justify-content: center;
+  }
+
+  .b-contacts-block__item-title {
+    font-size: 22px;
+  }
+
+  .b-contacts-section__title {
+    margin-bottom: 32px;
+  }
+
+  .b-contacts-block__map,
+  .b-contacts-block__info {
+    font-size: 18px;
+  }
+  .b-contacts-block__item {
+      margin-bottom: 30px;
+  }
+  .b-contacts-block__item-title:not(:last-child) {
+      margin-bottom: 5px;
+  }
+  .b-contacts-block__item:last-child .b-contacts-block__item-title {
+      margin-bottom: 25px;
+  }
+}
