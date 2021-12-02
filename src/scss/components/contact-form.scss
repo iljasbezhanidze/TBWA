@@ -1,0 +1,142 @@
+.b-contact-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  column-gap: 40px;
+}
+
+.b-contact-form__title {
+  white-space: nowrap;
+}
+
+.b-contact-form__wrapper {
+  max-width: 940px;
+}
+
+.b-form {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  justify-content: flex-start;
+}
+
+.b-form__input {
+  background-color: #F2F2F2;
+  transition: all .2s;
+  padding: 30px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  outline: transparent;
+  margin-bottom: 20px;
+  flex: 1 0 47%;
+  font-size: 18px;
+
+  &::placeholder {
+    opacity: .4;
+  }
+
+  &:active,
+  &:focus {
+    border-bottom: 2px solid #FECC00;
+    color: #000;
+    opacity: 1;
+
+    &::placeholder {
+      font-weight: 700;
+      color: #000;
+      opacity: 1;
+    }
+  }
+}
+
+.b-form__input_name {}
+
+.b-form__input {}
+
+.b-form__input_email {}
+
+.b-form__input {}
+
+.b-form__input_phone {}
+
+.b-form__input {}
+
+.b-form__input_company {}
+
+.b-form__textfield {
+  @extend .b-form__input;
+  flex: 2 0 100%;
+  max-height: 120px;
+  margin-bottom: 35px;
+}
+
+.b-form__agrement-box {
+  flex: 2 0 100%;
+  margin-bottom: 35px;
+}
+
+.b-form__agrement {
+  font-size: 18px;
+  opacity: .4;
+  display: inline;
+}
+
+.b-form__agrement-link {
+  display: inline;
+  font-size: 18px;
+  font-weight: 700;
+  color: #FECC00;
+  opacity: 1;
+  transition: opacity .2s;
+
+  &:hover {
+    opacity: .75;
+  }
+}
+
+.b-form__submit {
+  display: block;
+}
+
+
+@media(max-width:1100px) {
+  .b-contact-form {
+    flex-direction: column;
+  }
+
+  .b-contact-form__title {
+    margin-bottom: 40px;
+  }
+
+  .b-form__agrement-box {
+    flex-basis: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 20px;
+  }
+}
+
+@media(max-width:700px) {
+  .b-form__input {
+    flex-basis: 100%;
+    padding: 20px 15px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .b-form__agrement-box {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+    margin-right: 0;
+    font-size: 14px;
+  }
+  .b-form__submit{
+      flex-basis: 115px;
+  }
+
+  .b-form__textfield {
+      max-height: 260px;
+      margin-bottom: 20px;
+  }
+}
