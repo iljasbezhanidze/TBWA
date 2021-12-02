@@ -5,6 +5,7 @@ const impositionBlocks = document.querySelectorAll('.b-imposition')
 const impositionTextInner = document.querySelectorAll('.b-imposition__inner')
 const impositionTopImage = document.querySelectorAll('.b-imposition__main-img')
 
+
 //menu toggler
 burgerButton.onclick = () => header.classList.toggle('b-toggle')
 
@@ -33,3 +34,7 @@ var mySwiper = new Swiper(".mySwiper_team", {slidesPerView: 'auto'});
 
 //init & destroy slider (different size pictures) depending on viewport width
 window.innerWidth < 800 ? mySwiper() : mySwiper.destroy()
+
+
+
+
