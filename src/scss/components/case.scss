@@ -1,0 +1,42 @@
+.b-case-description {
+    display: flex;
+    column-gap: 120px;
+    align-items: flex-start;
+
+    & .b-text {
+        max-width: 600px;
+        min-width: 58%;
+    }
+}
+
+.b-case-description__left-col {
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.b-awwards__title {
+    margin-bottom: 60px;
+}
+
+.b-awards__items {
+    display: flex;
+    align-items: center;
+    column-gap: 60px;
+}
+.b-award {
+    display: flex;
+    align-items: center;
+}
+.b-award__img {
+    width: 115px;
+    height: 120px;
+    margin-right: 40px;
+}
+
+.b-images_negative-margin {
+    margin-top: -100px;
+}
+
+.b-images__item:not(:last-child) {
+    margin-bottom: 120px;
+}

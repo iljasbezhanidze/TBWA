@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>New site</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <main class="b-page">
+    <div class="b-page__header">
+      <div class="b-page__container-header">
+        @include('partials/header.html')
+      </div>
+    </div>
+    <section class="b-main__section b-main__section_pad-none">
+      <div class="b-main__container b-main__container_full-screen">
+        @include('partials/first-screen-article.html')
+      </div>
+    </section>
+    <div class="b-main b-page__main">
+      <section class="b-main__section">
+        <div class="b-main__container ">
+          <div class="b-main__container_article">
+            <div class="b-article-body ">
+              <p>
+                NEW YORK, Aug. 3, 2021 /PRNewswire/ -- ADCOLOR, the premier organization dedicated to celebrating and
+                promoting professionals of color and diversity in the creative industries, today announced the nominees
+                and honorees for its 15th Annual ADCOLOR Awards. Since 2007, the ADCOLOR Awards have highlighted and
+                honored the achievements of diverse communities in the creative industries. The awards recognize those who
+                go above and beyond to make a difference and who embody the organization's mission of "Rise Up, Reach
+                Back."</p>
+              <p>
+                ADCOLOR received a record number of submissions this year for its 10 categories accepting nominations,
+                which included two new categories: the ADCOLOR in Music Award and the ADCOLOR|TikTok Creator Award. All
+                nominations were carefully reviewed by more than 60 elected judges who represented a diverse range of
+                industries, titles, levels and backgrounds.</p>
+              <br><br>
+              <br> <br>
+              <h4>About Adcolor</h4>
+              <p>ADCOLOR® is a not-for-profit 501(c) (6) organization whose mission is to celebrate and champion diversity
+                in the creative industries. Our process is twofold. First, we help individuals and organizations RISE UP,
+                letting their accomplishments and ideas shine. Then we teach these new leaders and would-be-mentors how to
+                REACH BACK and find others who deserve to be noticed and promoted. Our goal is to create a community of
+                diverse professionals who are here to support and uplift one another. Learn more by visiting
+                www.adcolor.org.</p>
+              <br><br><br><br>
+              <table>
+                <tr>
+                  <th>Name</th>
+                  <th>Option</th>
+                </tr>
+                <tr>
+                  <td>Number 1</td>
+                  <td>Number 2</td>
+                </tr>
+                <tr>
+                  <td>Number 1</td>
+                  <td>Number 2</td>
+                </tr>
+                <tr>
+                  <td>Number 1</td>
+                  <td>Number 2</td>
+                </tr>
+                <tr>
+                  <td>Number 1</td>
+                  <td>Number 2</td>
+                </tr>
+                <tr>
+                  <td>Number 1</td>
+                  <td>Number 2</td>
+                </tr>
+                <tr>
+                  <td>Number 1</td>
+                  <td>Number 2</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <img class="b-img" src="./img/imposition4.jpg" alt="">
+        </div>
+      </section>
+      <section class="b-main__section b-main__section_pad-none">
+        <div class="b-main__container b-main__container_full-screen">
+          @include('partials/slider.html')
+          @include('partials/video.html')
+        </div>
+      </section>
+    </div>
+    <div class="b-page__footer">
+      <div class="b-page__container-footer">@include('partials/footer.html')</div>
+    </div>
+  </main>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

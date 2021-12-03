@@ -12,6 +12,10 @@
   & .b-article__wrapper {
     height: 100%;
     max-width: 453px;
+
+    &:hover {
+      opacity: .75;
+    }
   }
 }
 

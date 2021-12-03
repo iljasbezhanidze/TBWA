@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>New site</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <main class="b-page">
+    <div class="b-page__header">
+      <div class="b-page__container-header">
+        @include('partials/header.html')
+      </div>
+    </div>
+    <div class="b-main b-page__main">
+      <section class="b-main__section b-main__section_pad-none  b-main__section_bg-grey">
+        <div class="b-main__container b-main__container_full-screen">
+          @include('partials/first-screen-case.html')
+        </div>
+      </section>
+      <section class="b-main__section b-main__section_bg-grey">
+        <div class="b-main__container">
+          <div class="b-case-description">
+            <div class="b-text b-col__content b-case-description__left-col">
+              <h2 class="b-text__title b-title">Disruption Live</h2>
+              <div class="b-text__subtile">Connecting at the speed of culture</div>
+              <div class="b-text__content">
+                <p>Your target audience's attention has to be earned. It's not about share of voice anymore, it's
+                  about 'share of culture'. Competition is more than the category. Brands have a role to play in
+                  culture. Culture is everywhere and it never sleeps. Brands will have to decide: which areas in
+                  culture are relevant to us and our customers in the near future? With Edges, Backslash and
+                  Disruption® Live we have the tools at hand to keep brands just as alive and top-of-mind as culture.
+                </p>
+              </div>
+            </div>
+            <div class="b-socials b-case-description__right-col">
+              <a class="b-socials__link" href="#">
+                <img class="b-socilas__icon" src="./../img/fb.svg" alt="facebook link">
+              </a>
+              <a class="b-socials__link" href="#">
+                <img class="b-socilas__icon" src="./../img/inst.svg" alt="instagram link">
+              </a>
+              <a class="b-socials__link" href="#">
+                <img class="b-socilas__icon" src="./../img/twit.svg" alt="twitter link">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="b-main__section b-main__section_bg-grey">
+        <div class="b-main__container">
+          <div class="b-awwards">
+            <h2 class="b-awwards__title b-title">Awards</h2>
+            <ul class="b-awards__items">
+              <li class="b-award b-awards__item">
+                <img class="b-award__img" src="./img/aw1.jpg" alt="The Very Best Of"></img>
+                <div class="b-award__title">The Very Best Of</div>
+              </li>
+              <li class="b-award b-awards__item">
+                <img class="b-award__img" src="./img/aw2.jpg" alt="KIAF"></img>
+                <div class="b-award__title">KIAF</div>
+              </li>
+              <li class="b-award b-awards__item">
+                <img class="b-award__img" src="./img/aw3.jpg" alt="Festival de Cannes"></img>
+                <div class="b-award__title">Festival de Cannes</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="b-main__section">
+        <div class="b-main__container">
+          <div class="b-images b-images_negative-margin">
+            <div class="b-images__item"><img class="b-img" src="./img/imposition2.jpg" alt="photo"></div>
+            <div class="b-images__item"><img class="b-img" src="./img/imposition4.jpg" alt="photo"></div>
+          </div>
+        </div>
+      </section>
+      <section class="b-main__section b-main__section_pad-none">
+        <div class="b-main__container b-main__container_full-screen">
+          @include('partials/slider.html')
+          @include('partials/video.html')
+        </div>
+      </section>
+      <!-- <section class="b-main__section">
+        <div class="b-main__container">
+          @include('partials/diff-size-imgs.html')
+        </div>
+      </section> -->
+      <div class="b-page__footer">
+        <div class="b-page__container-footer">@include('partials/footer.html')</div>
+      </div>
+  </main>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
