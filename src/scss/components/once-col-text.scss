@@ -1,0 +1,37 @@
+.b-col {
+  width: 100%;
+  padding-top: 240px;
+
+  @media(max-width:1000px){
+      padding-top: 120px;
+  }
+}
+
+.b-text {
+  min-width: 45%;
+  max-width: 50%;
+
+  @media(max-width:1000px){
+      min-width: 100%;
+      max-width: 100%;
+  }
+}
+
+.b-col__content {}
+
+.b-text__title {
+  margin-bottom: 20px;
+}
+
+.b-text__subtile {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.b-text__content {}
+
+.b-text__content p {
+  font-size: 24px;
+  font-weight: 400;
+}

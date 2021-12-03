@@ -17,31 +17,51 @@
 @import "./components/contacts";
 @import "./components/form";
 @import "./components/blog-slider";
+@import "./components/once-col-text";
+
+//disabled element in blocks
+.b-diagonal__link,
+.b-first-screen__subtitle,
+.b-first-screen__title,
+.b-first-screen__button,
+.b-diagonal__btn {
+  display: none;
+}
+//enabled element
+.b-diagonal.b-diagonal_link .b-diagonal__link, //b-diagonal_link
+.b-diagonal.b-diagonal_btn .b-diagonal__btn,  //b-diagonal_btn
+.b-first-screen.b-first-screen_subtitle .b-first-screen__subtitle,  //b-first-screen_subtitle
+.b-first-screen.b-first-screen_title .b-first-screen__title,  //b-first-screen_title
+.b-first-screen.b-first-screen_btn .b-first-screen__button {  //b-first-screen_btn
+  display: block;
+}
 
 
+//fonts
+@font-face {
+  font-family: "helvetica_bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../resources/fonts/helvetica_bold.woff2") format("woff2")
+}
 
+@font-face {
+  font-family: "helvetica_regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../resources/fonts/helvetica_regular.woff2") format("woff2")
+}
 
 @font-face {
-    font-family: "helvetica_bold";
-    font-style: normal;
-    font-weight: 700;
-    src: url("../resources/fonts/helvetica_bold.woff2") format("woff2")
-  }
+  font-family: "helveticaneuecyr_black";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../resources/fonts/helveticaneuecyr_black.woff2") format("woff2")
+}
+
 @font-face {
-    font-family: "helvetica_regular";
-    font-style: normal;
-    font-weight: 400;
-    src: url("../resources/fonts/helvetica_regular.woff2") format("woff2")
-  }
-@font-face {
-    font-family: "helveticaneuecyr_black";
-    font-style: normal;
-    font-weight: 700;
-    src: url("../resources/fonts/helveticaneuecyr_black.woff2") format("woff2")
-  }
-@font-face {
-    font-family: "helveticaneuecyr_roman";
-    font-style: normal;
-    font-weight: 400;
-    src: url("../resources/fonts/helveticaneuecyr_roman.woff2") format("woff2")
-  }
+  font-family: "helveticaneuecyr_roman";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../resources/fonts/helveticaneuecyr_roman.woff2") format("woff2")
+}

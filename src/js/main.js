@@ -20,22 +20,12 @@ function containClass() {
 }
 
 
-//cascade style menu items
+//cascade style menu items 
 for (let i = 0, amount = 0; i < menuItems.length; i++, amount += 30) {
   menuItems[i].style.paddingLeft = `${amount}px`
 }
 
-
-//slider (different size pictures)
-var mySwiper = new Swiper(".mySwiper_team", {
-  slidesPerView: 'auto'
-});
-
-
-//init & destroy slider (different size pictures) depending on viewport width
-window.innerWidth < 800 ? mySwiper() : mySwiper.destroy()
-
-
+//SLIDERS//
 //init slider (width articles)
 var swiperBlog = new Swiper(".mySwiperBlog", {
   slidesPerView: 'auto',
@@ -51,4 +41,14 @@ var swiperBlog = new Swiper(".mySwiperBlog", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+//slider (different size pictures)
+var mySwiper = new Swiper(".mySwiper_team", {
+  slidesPerView: 'auto'
+});
+
+//init & destroy slider (different size pictures) depending on viewport width
+window.innerWidth < 800 ? mySwiper() : mySwiper.destroy()
+
+
 

@@ -26,7 +26,16 @@
     <div class="b-main b-page__main">
       <section class="b-main__section b-main__section_pad-none">
         <div class="b-main__container b-main__container_full-screen">
-          @include('partials/first-screen.html')
+          <div class="b-first-screen b-first-screen_title b-first-screen_btn">
+            <div class="b-media b-first-screen__media">
+              <img class="b-media__item" src="./img/first-screen.jpg" alt="media">
+            </div>
+            <div class="b-first-screen__inner">
+              <h1 class="b-main-title b-first-screen__title">We Are <br>The <br>Disruption® <br>Company</h1>
+              <span class="b-first-screen__subtitle">— Steve Jobs</span>
+              <a class="b-btn b-first-screen__button" href="#">Watch</a>
+            </div>
+          </div>
         </div>
       </section>
       <section class="b-main__section">
@@ -72,11 +81,18 @@
 
       <section class="b-main__section b-main__section_pad-none">
         <div class="b-main__container b-main__container_large">
-          <div class="b-diagonal b-diagonal_home-page">
+          <div class="b-diagonal b-diagonal_btn">
             <img class="b-diagonal__img" src="img/imposition4.jpg" alt="background">
             <div class="b-diagonal__section">
               <div class="b-diagonal__container">
-                @include('partials/diagonal-image.html')
+                <div class="b-diagonal__content b-diagonal__content_disruption">
+                  <h2 class="b-diagonal__title b-title">A Cure for The Common</h2>
+                  <div class="b-diagonal__descripption">
+                    We are not a traditional ad agency network — we are a radically open creative collective. We look at what everyone else is doing and strive to do something completely new. Completely ownable. We live and breathe Disruption, and for more than two decades that's been the secret to our clients' unprecedented success. 
+                  </div>
+                  <div class="b-btn b-btn_yellow b-diagonal__btn">More on Disruption</div>
+                  <a class="b-diagonal__link"  href="#" >Download the Edges</a>
+                </div>                
               </div>
             </div>
           </div>
