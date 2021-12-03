@@ -256,3 +256,12 @@ body {
       padding-top: 90px;
   }
 }
+
+.b-main__item {
+  padding-bottom: 80px;
+  
+  @media(max-width:1200px){
+      padding-bottom: 40px;
+  }
+}
+

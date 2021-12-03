@@ -120,25 +120,26 @@
     justify-content: center;
   }
 
-  .b-contacts-block__item-title {
+  .b-contacts-block__item-title:not(.b-contacts-section_page .b-contacts-block__item-title) {
     font-size: 22px;
   }
 
-  .b-contacts-section__title {
+  .b-contacts-section__title:not(.b-contacts-section_page .b-contacts-section__title) {
     margin-bottom: 32px;
   }
 
-  .b-contacts-block__map,
-  .b-contacts-block__info {
+  .b-contacts-block__map:not(.b-contacts-section_page .b-contacts-block__map),
+  .b-contacts-block__info:not(.b-contacts-section_page .b-contacts-block__info) {
     font-size: 18px;
   }
-  .b-contacts-block__item {
+  .b-contacts-block__item:not(.b-contacts-section_page .b-contacts-block__item) {
       margin-bottom: 30px;
   }
-  .b-contacts-block__item-title:not(:last-child) {
+  .b-contacts-block__item-title:not(:last-child):not(.b-contacts-section_page .b-contacts-block__item-title) {
       margin-bottom: 5px;
   }
-  .b-contacts-block__item:last-child .b-contacts-block__item-title {
+  .b-contacts-block__item:last-child .b-contacts-block__item-title:not(.b-contacts-section_page .b-contacts-block__item) {
       margin-bottom: 25px;
   }
+  
 }

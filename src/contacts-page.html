@@ -8,10 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#111111">
   <title>New site</title>
-  <link
-  rel="stylesheet"
-  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -24,14 +21,66 @@
       </div>
     </div>
     <div class="b-main b-page__main">
+      <section class="b-main__section b-main__section_pad-none">
+        <div class="b-main__container b-main__container_full-screen">
+          <div class="b-first-screen b-first-screen_title">
+            <div class="b-media b-first-screen__media">
+              <img class="b-media__item" src="./img/first-screen.jpg" alt="media">
+            </div>
+            <div class="b-main__container">
+              <div class="b-first-screen__inner">
+                <div class="b-contacts-section b-contacts-section_page">
+                  <h2 class="b-contacts-section__title b-main-title">Contacts</h2>
+                  <div class="b-contacts-block b-contacts-section__wrapper">
+                    <div class="b-contacts-block__item">
+                      <h3 class="b-contacts-block__item-title">Address</h3>
+                      <address class="b-contacts-block__address b-contacts-block__info">
+                        <a class="b-contacts-block__map" href="https://goo.gl/maps/JwYH8VHsaDnoREREA">3, Sportyvna sq.,
+                          exit 4, 4th floor Kyiv, Ukrain 01001</a>
+                      </address>
+                    </div>
+                    <div class="b-contacts-block__item">
+                      <h3 class="b-contacts-block__item-title">Phone</h3>
+                      <a class="b-contacts-block__tel b-contacts-block__info" href="tel:+380445947733">
+                        +380 44 594 7733
+                      </a>
+                    </div>
+                    <div class="b-contacts-block__item">
+                      <h3 class="b-contacts-block__item-title">E-mail</h3>
+                      <a class="b-contacts-block__email b-contacts-block__info"
+                        href="mailto:office@tbwa.com.ua">office@tbwa.com.ua</a>
+                    </div>
+                    <div class="b-contacts-block__item">
+                      <h3 class="b-contacts-block__item-title">Social</h3>
+                      <div class="b-socials b-contacts-block__links">
+                        <a class="b-socials__link" href="#">
+                          <img class="b-socilas__icon" src="./../img/fb.svg" alt="facebook link">
+                        </a>
+                        <a class="b-socials__link" href="#">
+                          <img class="b-socilas__icon" src="./../img/inst.svg" alt="instagram link">
+                        </a>
+                        <a class="b-socials__link" href="#">
+                          <img class="b-socilas__icon" src="./../img/twit.svg" alt="twitter link">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="b-main__section">
         <div class="b-main__container">
-          @include('partials/first-screen.html')
+          @include('partials/form.html')
         </div>
       </section>
     </div>
     <div class="b-page__footer">
-      <div class="b-page__container-footer">@include('partials/footer.html')</div>
+      <div class="b-page__container-footer">
+        @include('partials/footer.html')
+      </div>
     </div>
   </main>
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
