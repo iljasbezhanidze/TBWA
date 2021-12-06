@@ -159,7 +159,7 @@
   }
 
   .swiper-slide:not(.mySwiperBlog .swiper-slide) {
-    transform: translateX(57vw) scale(0.9);
+    transform: translateX(68vw) scale(0.9);
     &:last-child {
       padding-right: 4vw;
     }
@@ -173,6 +173,10 @@
     padding-right: 30px;
     padding-left: 30px;
     margin-bottom: 0;
+
+    @media(max-width:800px){
+        margin-bottom: 60px;
+    }
   }
   .b-our-team__blockquote {
     font-size: 16px;

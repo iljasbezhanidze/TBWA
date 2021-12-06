@@ -19,8 +19,13 @@ observer.observe(header, {
 
 //block scroll body
 function containClass() {
-  if (header.classList.contains('b-toggle')) document.body.style.overflow = 'hidden'
-  else document.body.style.overflow = 'auto'
+  if (header.classList.contains('b-toggle')) {
+    document.body.style.overflow = 'hidden'
+    document.body.style.paddingRight = '17px'
+  } else {
+    document.body.style.overflow = 'auto'
+    document.body.style.paddingRight = '0'
+  }
 }
 
 
@@ -96,7 +101,14 @@ var swiperArticle = new Swiper(".mySwiperArticle", {
 
 //slider (different size pictures)
 var mySwiper = new Swiper(".mySwiper_team", {
-  slidesPerView: 'auto'
+  slidesPerView: 'auto',
+  spaceBetween: 30,
+  // loop: true,
+  breakpoints: {
+    800: {
+      spaceBetween: 60,
+    },
+  },
 });
 
 //init & destroy slider (different size pictures) depending on viewport width
