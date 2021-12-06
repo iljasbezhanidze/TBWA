@@ -6,6 +6,45 @@
   column-gap: 40px;
 }
 
+.b-footer__bottom {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 60px;
+}
+
+.b-contracts__link {
+  text-decoration: underline !important;
+  font-size: 18px;
+
+  &:hover {
+    opacity: .75;
+  }
+}
+
+.b-copyright {
+  opacity: .4;
+  font-size: 18px;
+}
+
+.b-contrats {
+  display: flex;
+}
+
+.b-contracts__item:not(:last-child) {
+  margin-right: 60px;
+}
+
+.b-footer__bottom__item {
+  width: 50%;
+  max-width: 690px;
+}
+
+.b-footer .b-menu_footer .b-menu__list-item {
+  margin-bottom: 20px;
+}
+
 .b-logo__img {}
 
 ////menu
@@ -49,6 +88,7 @@
     margin-left: 70px;
   }
 
+
   @media(max-width:1300px) {
     & .b-menu__list {
       column-gap: 60px;
@@ -63,6 +103,8 @@
     }
   }
 
+
+
   @media(max-width:1000px) {
     .b-menu__list .b-menu__list-link {
       font-size: 28px;
@@ -76,9 +118,7 @@
       margin-left: 0 !important;
     }
   }
-}
 
-@media(max-width:1000px) {
   .b-footer__top {
     flex-direction: column;
     align-items: center;
@@ -97,6 +137,18 @@
   .b-footer .b-menu_footer .b-menu__wrapper {
     flex-direction: column;
     align-items: center;
+  }
+  .b-footer__top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .b-foter_logo {
+    margin-bottom: 60px;
+  }
+
+  .b-footer .b-menu_footer .b-communications_footer {
+    margin-left: 0;
   }
 
   .b-footer .b-menu_footer .b-menu__list {
@@ -131,30 +183,85 @@
     width: 100px;
     height: 24px;
   }
-  .b-footer .b-menu_footer .b-menu__list .b-menu__list-link{
-      font-size: 24px;
+
+  .b-footer .b-menu_footer .b-menu__list .b-menu__list-link {
+    font-size: 24px;
   }
+
   .b-footer .b-menu_footer .b-contacts__address {
-      font-size: 14px;
+    font-size: 14px;
   }
-  .b-footer  .b-contacts__email,
-  .b-footer .b-contacts__tel  {
-      font-size: 18px;
+
+  .b-footer .b-contacts__email,
+  .b-footer .b-contacts__tel {
+    font-size: 18px;
   }
-  .b-footer  .b-contacts__tel {
-      margin-bottom: 15px;
+
+  .b-footer .b-contacts__tel {
+    margin-bottom: 15px;
   }
-  .b-footer  .b-communications__top {
-      margin-bottom: 40px;
+
+  .b-footer .b-communications__top {
+    margin-bottom: 40px;
   }
 }
 
-@media(max-width:900px){
-    .b-footer .b-socials__link {
-        background-color: #fff;
-    }
+@media(max-width:900px) {
+  .b-footer .b-socials__link {
+    background-color: #fff;
+  }
 }
 
 .b-footer .b-menu_footer .b-menu__wrapper {
   padding-top: 0 !important;
+}
+
+.b-footer .b-contacts__address,
+.b-footer .b-contacts__tel {
+  margin-bottom: 35px !important;
+
+}
+
+@media(max-width:940px) {
+
+  .b-footer .b-contacts__address,
+  .b-footer .b-contacts__tel {
+    margin-bottom: 15px !important;
+  }
+
+  .b-footer .b-menu_footer .b-menu__list-item {
+    margin-bottom: 15px;
+  }
+}
+@media(max-width:1125px){
+    .b-footer__bottom {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .b-contrats.b-footer__bottom__item {
+      margin-bottom: 40px;
+      justify-content: center;
+      text-align: center;
+    }
+    .b-footer__bottom__item {
+      width: 100%;
+      max-width: 100%;
+    }
+}
+
+@media(max-width:620px){
+  .b-contrats {
+    flex-direction: column;
+  }
+
+  .b-contrats.b-footer__bottom__item {
+    margin-bottom: 60px;
+  }
+
+
+  .b-contracts__item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
 }

@@ -23,6 +23,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  max-width: 12vw !important;
+
+  @media(max-width:850px){
+      max-width: 20vw !important;
+  }
+  
 
   &__arrow {
     transition: all .4s;
