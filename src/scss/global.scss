@@ -213,6 +213,28 @@ body {
   }
 }
 
+.b-btn_black {
+  padding: 19px 80px;
+  background-color: #000;
+  color: #fff;
+  clip-path: polygon(0% 0%, 87% 0%, 100% 100%, 13% 100%);
+  white-space: nowrap;
+  text-align: center;
+  transition: all .3s linear;
+  font-weight: 700;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
+
+  @media(max-width:660px) {
+    font-size: 18px;
+    padding: 14px 44px;
+  }
+}
+
 
 .b-title {
   // font-family: 'HelveticaNeueCyr', sans-serif;

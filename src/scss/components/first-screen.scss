@@ -43,6 +43,23 @@
     }
 }
 .b-first-screen__subtitle {
+    margin-bottom: 40px;
+}
+.b-first-screen__subtitle_bold {
+    font-size: 48px;
+    font-weight: 700;
+    @media(max-width:1200px){
+        font-size: 40px;
+    }
+    @media(max-width:1000px){
+        font-size: 36px;
+    }
+    @media(max-width:660px){
+        font-size: 32px;
+    }
+    @media(max-width:440px){
+        font-size: 26px;
+    }
 }
 .b-btn.b-first-screen__button {
 }
