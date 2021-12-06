@@ -43,11 +43,14 @@
 }
 
 
-@media(max-width:1156px) {
+@media(max-width:1250px){
   .b-media__item_case {
     object-fit: cover;
-    height: 80vh;
+    height: 85vh;
   }
+}
+
+@media(max-width:1156px) {
 
   .b-images_negative-margin {
     margin-top: -4.5vw;
@@ -140,4 +143,14 @@
   .b-slider__nav {
     padding-bottom: 80px;
   }
+}
+
+.b-case-description .b-socials__link {
+  background-color: #fff;
+}
+
+
+.b-case__company-name {
+  margin-bottom: 40px;
+  color: #fff;
 }

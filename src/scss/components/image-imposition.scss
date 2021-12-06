@@ -87,7 +87,7 @@
   align-items: flex-start;
   flex-direction: column;
   max-width: 630px;
-  min-height: 470px;
+  min-height: 490px;
   margin-bottom: 30px;
 
   @media(max-width:1460px) {
@@ -214,9 +214,9 @@
 
   .b-imposition_reverse .b-imposition__img-inner_second {
     position: unset;
-    padding-left: 0;
+    padding-left: 30px;
     padding-right: 0;
-    width: 88.8vw;
+    width: 74.8vw;
   }
 
   .b-imposition_reverse .b-imposition__img-inner_main {

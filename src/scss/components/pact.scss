@@ -1,0 +1,95 @@
+.b-personala-data {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+  overflow: auto;
+  z-index: 99999;
+  background-color: #fff;
+}
+
+.b-personal-data__main {
+  display: flex;
+  column-gap: 60px;
+}
+
+.b-pact {
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-button,
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    color: transparent;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  p,
+  li {
+    font-size: 20px;
+  }
+}
+
+.b-personala-data__left-col {
+  display: flex;
+  flex-direction: column;
+  max-width: 440px;
+  flex-shrink: 0;
+}
+
+.b-personala-data__title {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.b-contract-nav {
+  display: flex;
+  align-items: center;
+}
+
+.b-contract-nav__btn {
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+}
+
+.b-contract-nav__wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+
+  &:hover svg path {
+    stroke: #FECC00;
+  }
+}
+
+.b-contract-nav__text {
+  font-size: 16px;
+}

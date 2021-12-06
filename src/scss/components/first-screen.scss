@@ -5,6 +5,15 @@
         height: 100vh;
     }
 }
+.b-first-screen_full-height {
+    height: 100vh;
+    object-fit: cover;
+}   
+
+.b-page_404 .b-main__section{
+    padding-bottom: 0;
+}
+
 .b-media.b-first-screen__media {
     
 }
@@ -64,8 +73,14 @@
 .b-btn.b-first-screen__button {
 }
 
+
+
 @media(max-width:660px){
     .b-first-screen__title {
         font-size: 44px;
     }
+}
+
+@media(max-width:460px){
+    
 }

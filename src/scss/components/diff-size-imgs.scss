@@ -181,6 +181,17 @@
     margin-bottom: 15px;
   }
   .mySwiper_team {
-    margin-bottom: 66px;
+    margin-bottom: 40px;
+  }
+}
+
+.b-our-team__btn-wrapper {
+  padding-top: 90px;
+  position: relative;
+  @media(max-width:800px){
+      padding-top: 60px;
+  }
+  @media(max-width:660px){
+      padding-top: 30px;
   }
 }

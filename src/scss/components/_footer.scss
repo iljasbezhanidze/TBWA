@@ -265,3 +265,22 @@
     margin-bottom: 15px;
   }
 }
+
+
+@media(max-width:660px){
+  .b-copyright {
+    font-size: 12px;
+  }
+
+  .b-contracts__link,
+  .b-form__agrement {
+    font-size: 14px;
+  }
+  .b-contracts__link {
+    font-weight: 600;
+  }
+  .b-contact-form .b-contact-form__wrapper  .b-form__input {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}

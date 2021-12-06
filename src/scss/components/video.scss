@@ -2,19 +2,21 @@
   width: 100%;
   position: relative;
   max-height: 988px;
-//   aspect-ratio: 16 / 9;
-  
+  //   aspect-ratio: 16 / 9;
+
   .b-video-article__preview,
   .b-video-article {
-      width: 100%;
-      height: 100%;
-    }
-    
-    &-article,
-    iframe,
-    img {
     width: 100%;
-    height: 100%;
+    height: 98vh;
+    object-fit: cover;
+  }
+
+  &-article,
+  iframe,
+  img {
+    width: 100%;
+    height: 98vh;
+    object-fit: cover;
   }
 }
 
@@ -25,10 +27,10 @@
   transform: translate(-50%, -50%);
   max-width: 12vw !important;
 
-  @media(max-width:850px){
-      max-width: 20vw !important;
+  @media(max-width:850px) {
+    max-width: 20vw !important;
   }
-  
+
 
   &__arrow {
     transition: all .4s;

@@ -1,6 +1,10 @@
 const menuItems = document.querySelectorAll('.b-menu__list-item')
 const burgerButton = document.querySelector('.b-burger')
 const header = document.querySelector('.b-header')
+const modalBtns = document.querySelectorAll('[data-modal-open]')
+const modals = document.querySelectorAll('[data-modal]')
+const closeModal = document.querySelector('[data-modal-close]')
+
 
 //menu toggler
 burgerButton.onclick = () => header.classList.toggle('b-toggle')
@@ -26,33 +30,36 @@ for (let i = 0, amount = 0; i < menuItems.length; i++, amount += 30) {
 }
 
 
+
+
+
 //VIDEO
 const videos = document.querySelectorAll('.b-video-article');
-let generateUrl = function(id) {
-	let query = '?rel=0&showinfo=0&autoplay=1';
-	return 'https://www.youtube.com/embed/' + id + query;
+let generateUrl = function (id) {
+  let query = '?rel=0&showinfo=0&autoplay=1';
+  return 'https://www.youtube.com/embed/' + id + query;
 };
-let createIframe = function(id) {
-	let iframe = document.createElement('iframe');
-	iframe.setAttribute('allowfullscreen', '');
+let createIframe = function (id) {
+  let iframe = document.createElement('iframe');
+  iframe.setAttribute('allowfullscreen', '');
   iframe.setAttribute('allow', 'autoplay; encrypted-media');
-	iframe.setAttribute('src', generateUrl(id));
-	return iframe;
+  iframe.setAttribute('src', generateUrl(id));
+  return iframe;
 };
 videos.forEach((el) => {
-	let videoHref = el.getAttribute('data-video');
-	let deletedLength = 'https://youtu.be/'.length;  //заполнить индивидуально
-	let videoId = videoHref.substring(deletedLength, videoHref.length);
-	let img = el.querySelector('img');
-	let youtubeImgSrc = 'https://i.ytimg.com/vi/' + videoId + '/maxresdefault.jpg';
-	img.setAttribute('src', youtubeImgSrc);
-	el.addEventListener('click', (e) => {
-		e.preventDefault();
-		let iframe = createIframe(videoId);
-		el.querySelector('img').remove();
-		el.appendChild(iframe);
-		el.querySelector('button').remove();
-	});
+  let videoHref = el.getAttribute('data-video');
+  let deletedLength = 'https://youtu.be/'.length; //заполнить индивидуально
+  let videoId = videoHref.substring(deletedLength, videoHref.length);
+  let img = el.querySelector('img');
+  let youtubeImgSrc = 'https://i.ytimg.com/vi/' + videoId + '/maxresdefault.jpg';
+  img.setAttribute('src', youtubeImgSrc);
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    let iframe = createIframe(videoId);
+    el.querySelector('img').remove();
+    el.appendChild(iframe);
+    el.querySelector('button').remove();
+  });
 });
 
 //SLIDERS//
@@ -94,6 +101,3 @@ var mySwiper = new Swiper(".mySwiper_team", {
 
 //init & destroy slider (different size pictures) depending on viewport width
 window.innerWidth < 800 ? mySwiper() : mySwiper.destroy()
-
-
-

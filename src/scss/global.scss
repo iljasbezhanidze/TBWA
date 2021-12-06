@@ -192,7 +192,7 @@ body {
 }
 
 .b-btn_white {
-  padding: 19px 80px;
+  padding: 28px 87px;
   background-color: #fff;
   color: #000;
   clip-path: polygon(0% 0%, 87% 0%, 100% 100%, 13% 100%);
@@ -311,7 +311,26 @@ body {
 }
 
 .b-main__container_article {
-  max-width: 960px;
+  max-width: 690px;
  margin: 0 auto;
 }
 
+.b-hidden {
+  display: none !important;
+}
+
+.b-projects__btn-wrapper {
+  display: flex;
+  margin-top: 120px;
+  @media(max-width:1000px){
+      margin-top: 90px;
+  }
+}
+@media(max-width:660px){
+  .pad-top-mob {
+    padding-top: 90px !important;
+  } 
+  .pad-top-mob_low {
+    padding-top: 90px !important;
+  } 
+}
