@@ -1,3 +1,5 @@
+const menuOverlay = document.querySelector('.b-menu')
+const menuContent = document.querySelector('.b-menu__content')
 const menuItems = document.querySelectorAll('.b-menu__list-item')
 const burgerButton = document.querySelector('.b-burger')
 const header = document.querySelector('.b-header')
@@ -17,25 +19,30 @@ observer.observe(header, {
 })
 
 
-//block scroll body
+//block scroll body if menu open
 function containClass() {
   if (header.classList.contains('b-toggle')) {
-    document.body.style.overflow = 'hidden'
-    document.body.style.paddingRight = '17px'
+    document.body.classList.add('b-blockScroll');
+    setTimeout(() => {
+      menuOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.253)"
+    }, 160);
   } else {
-    document.body.style.overflow = 'auto'
-    document.body.style.paddingRight = '0'
+    document.body.classList.remove('b-blockScroll');
+    menuOverlay.style.backgroundColor = 'transparent'
   }
 }
+
+//close menu if target click overlay
+window.addEventListener('click', function(event) {
+  console.log(event.target)
+  if(event.target == menuOverlay && event.target != menuContent) header.classList.remove('b-toggle')
+})
 
 
 //cascade style menu items 
 for (let i = 0, amount = 0; i < menuItems.length; i++, amount += 30) {
   menuItems[i].style.paddingLeft = `${amount}px`
 }
-
-
-
 
 
 //VIDEO

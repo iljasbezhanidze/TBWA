@@ -334,3 +334,10 @@ body {
     padding-top: 90px !important;
   } 
 }
+
+.b-blockScroll {
+  overflow: hidden;
+  @media(hover) {
+    padding-right: 17px;
+  }
+}

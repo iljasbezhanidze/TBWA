@@ -1,16 +1,20 @@
 .b-menu {
-  background-color: #fff;
   position: absolute;
   left: 0;
   top: 0;
   width: 107%;
   height: 100vh;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 13% 100%);
   transform: translate3d(100vw, 0, 0);
-  transition: transform .4s cubic-bezier(0, 0, 0.36, 1.35);
-  display: flex;
-  justify-content: space-between;
-  overflow-y: auto !important;
+  transition: all .4s cubic-bezier(0, 0, 0.36, 1.35);
+  background-color: transparent;
+
+  &__content {
+    background-color: #fff;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 13% 100%);
+    display: flex;
+    justify-content: space-between;
+    overflow-y: auto !important;
+  }
 
   &__contacts {}
 
@@ -283,6 +287,7 @@
     padding-top: 150px !important;
   }
 }
+
 @media(max-height: 630px) {
   .b-menu__wrapper {
     padding-top: 250px !important;
