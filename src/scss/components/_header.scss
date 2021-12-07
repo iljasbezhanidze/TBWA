@@ -5,6 +5,7 @@
   width: 100%;
 }
 
+
 .b-header__nav-wrapper {
   display: flex;
   justify-content: space-between;
@@ -53,6 +54,10 @@
   }
 }
 
+.b-header_white .b-lang {
+  color: #fff;
+}
+
 .b-lang__current {
   font-weight: 700;
   font-size: 18px;
@@ -82,10 +87,15 @@
   z-index: 9999;
   position: relative;
   transition: opacity .2s;
-
+  
+  
   &:hover {
     opacity: .75;
   }
+}
+
+.b-header_white .b-burger .b-burger__line {
+  background-color: #fff;
 }
 
 .b-burger__line {

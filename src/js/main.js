@@ -5,7 +5,7 @@ const burgerButton = document.querySelector('.b-burger')
 const header = document.querySelector('.b-header')
 const modalOpen = document.querySelectorAll('[data-modal-open]')
 const modals = document.querySelectorAll('[data-modal]')
-const moadlInner = document.querySelectorAll('.b-modal')
+const moadalInner = document.querySelectorAll('.b-modal')
 const closeModal = document.querySelectorAll('[data-modal-close]')
 const forms = document.querySelectorAll('.b-form')
 
@@ -14,7 +14,10 @@ const forms = document.querySelectorAll('.b-form')
 
 //---HAMBURGER MENU---
 //menu toggler
-burgerButton.onclick = () => header.classList.toggle('b-toggle')
+burgerButton.onclick = () => {
+  header.classList.toggle('b-toggle')
+  document.body.classList.toggle('b-blockScroll')
+}
 
 //watching for menu 
 const observer = new MutationObserver(containClass)
@@ -73,15 +76,18 @@ modalOpen.forEach(elem => {
 });
 
 //close btn active 
-closeModal.forEach(el => el.onclick = () => hideModals());
+closeModal.forEach(el => el.onclick = () => {
+  hideModals();
+  document.body.classList.remove('b-blockScroll');
+});
 
 //close to click overlay 
-window.addEventListener('click', function(e) {
+window.addEventListener('click', function (e) {
   modals.forEach(el => {
-    if(el == e.target && e.target != moadlInner) {
+    if (el == e.target && e.target != moadalInner) {
       document.body.classList.remove('b-blockScroll')
       hideModals();
-    }; 
+    };
   });
 });
 

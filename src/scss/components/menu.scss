@@ -37,6 +37,14 @@
   transform: translate3d(0, 0, 0);
 }
 
+.b-header.b-toggle .b-burger .b-burger__line {
+  background-color: #000;
+}
+
+.b-header.b-toggle .b-lang {
+  color: #000;
+}
+
 .b-header.b-toggle .b-burger__line {
   transform-origin: center;
   transition: all .2s;
