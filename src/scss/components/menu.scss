@@ -8,6 +8,7 @@
   transition: transform .4s cubic-bezier(0, 0, 0.36, 1.35), background .6s linear;
   background-color: transparent;
 
+
   &__content {
     background-color: #fff;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 13% 100%);
