@@ -25,7 +25,7 @@ function containClass() {
     document.body.classList.add('b-blockScroll');
     setTimeout(() => {
       menuOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.253)"
-    }, 160);
+    }, 200);
   } else {
     document.body.classList.remove('b-blockScroll');
     menuOverlay.style.backgroundColor = 'transparent'
@@ -34,7 +34,6 @@ function containClass() {
 
 //close menu if target click overlay
 window.addEventListener('click', function(event) {
-  console.log(event.target)
   if(event.target == menuOverlay && event.target != menuContent) header.classList.remove('b-toggle')
 })
 
