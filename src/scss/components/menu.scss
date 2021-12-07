@@ -57,11 +57,11 @@
 }
 
 .b-header.b-toggle .b-burger__line:first-child {
-  transform: rotate(45deg) translate(8px, 10px);
+  transform: rotate(45deg) translate(4px, 7px);
 }
 
 .b-header.b-toggle .b-burger__line:last-child {
-  transform: rotate(-45deg) translate(1px, -4px);
+  transform: rotate(-45deg) translate(4px, -7px);
 }
 
 @media(max-width:1100px) {
