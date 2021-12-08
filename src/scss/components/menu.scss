@@ -7,6 +7,7 @@
   transform: translate3d(100vw, 0, 0);
   transition: transform .4s cubic-bezier(0, 0, 0.36, 1.35), background .6s linear;
   background-color: transparent;
+  z-index: 999;
 
 
   &__content {

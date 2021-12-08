@@ -44,7 +44,7 @@
 }
 
 .b-lang {
-  z-index: 9999;
+  z-index: 99999;
   position: relative;
   cursor: pointer;
   transition: opacity .2s;
@@ -71,8 +71,13 @@
     font-size: 14px;
   }
 }
-
-.b-logo {}
+.b-logo {
+  opacity: 1;
+  transition: opacity .4s;
+}
+.b-header.b-toggle .b-logo {
+  opacity: 0;
+}
 
 .b-burger {
   width: var(--burger);

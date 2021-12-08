@@ -15,33 +15,6 @@ const firstScreen = document.querySelector('.b-first-screen')
 
 
 
-//SCROLL TO TOP
-function trackScroll() {
-  var scrolled = window.pageYOffset;
-  var coords = document.documentElement.clientHeight;
-
-  if (scrolled > coords) {
-    scrollBtn.classList.add('b-show');
-  }
-  if (scrolled < coords) {
-    scrollBtn.classList.remove('b-show');
-  }
-}
-
-function backToTop() {
-  if (window.pageYOffset > 0) {
-    window.scrollBy(0, -80);
-    setTimeout(backToTop, 0);
-  }
-}
-
-window.addEventListener('scroll', trackScroll);
-scrollBtn.addEventListener('click', backToTop);
-
-
-
-
-
 
 //---HAMBURGER MENU---
 //menu toggler
@@ -121,6 +94,43 @@ window.addEventListener('click', function (e) {
     };
   });
 });
+
+
+
+
+
+
+
+
+
+
+//SCROLL TO TOP
+function trackScroll() {
+  var scrolled = window.pageYOffset;
+  var coords = document.documentElement.clientHeight;
+
+  if (scrolled > coords) {
+    scrollBtn.classList.add('b-show');
+  }
+  if (scrolled < coords) {
+    scrollBtn.classList.remove('b-show');
+  }
+}
+
+function backToTop() {
+  if (window.pageYOffset > 0) {
+    window.scrollBy(0, -80);
+    setTimeout(backToTop, 0);
+  }
+}
+
+window.addEventListener('scroll', trackScroll);
+scrollBtn.addEventListener('click', backToTop);
+
+
+
+
+
 
 
 

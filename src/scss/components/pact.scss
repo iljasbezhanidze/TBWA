@@ -1,95 +1,112 @@
-.b-personala-data {
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // width: 100%;
-  // min-height: 100vh;
-  // max-height: 100%;
-  overflow: auto;
-  // z-index: 99999;
-  // background-color: #fff;
+.b-modal.b-modal-overlay__pact {
+  padding: 120px 30px;
+  flex-grow: 2;
+  min-width: 100%;
+  height: 100vh;
+  background-color: #fff;
 }
 
-.b-personal-data__main {
-  display: flex;
-  column-gap: 60px;
+.b-modal-overlay__pact-content {
+  max-width: calc(1440px + 60px);
+  margin: auto;
 }
 
 .b-pact {
-  max-height: 80vh;
-  overflow-y: auto;
-  scrollbar-width: none;
+  display: flex;
+  align-items: flex-start;
+  column-gap: 120px;
+}
 
-  &::after {
-    content: '';
-    width: 100%;
-    height: 40px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
-    position: absolute;
-    left: 0;
-    bottom: 0;
-  }
+.b-pact__nav {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.b-pact__left-col {
+  flex: 1 0 30%;
+}
+
+.b-pact__right-col {
+  overflow-y: auto !important;
+  max-height: 840px;
 
   &::-webkit-scrollbar {
     display: none;
   }
+}
 
-  &::-webkit-scrollbar {
-    width: 0;
-  }
+.b-pact__body {
+  position: relative;
+  max-height: 83vh;
+  overflow-y: hidden;
 
-  &::-webkit-scrollbar,
-  &::-webkit-scrollbar-button,
-  &::-webkit-scrollbar-track,
-  &::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    color: transparent;
-  }
-
-  h2 {
-    font-size: 24px;
-    margin-bottom: 40px;
-  }
-
-  p,
-  li {
-    font-size: 20px;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
   }
 }
 
-.b-personala-data__left-col {
-  display: flex;
-  flex-direction: column;
-  max-width: 440px;
-  flex-shrink: 0;
-}
+.b-modal__close-btn {}
 
-.b-personala-data__title {
+.b-pact__title {
   font-size: 32px;
   margin-bottom: 40px;
 }
 
-.b-contract-nav {
-  display: flex;
-  align-items: center;
+.b-pact__btn {}
+
+.b-pact__btn-description {
+  font-size: 16px;
+  white-space: nowrap;
 }
 
-.b-contract-nav__btn {
-  height: 50px;
-  width: 50px;
-  margin-right: 20px;
+.b-pact__btn-description:not(first-child) {
+  margin-left: 20px;
 }
 
-.b-contract-nav__wrapper {
-  display: flex;
-  align-items: center;
+.b-pact__btn-description:not(kast-child) {
   margin-right: 40px;
+}
 
-  &:hover svg path {
-    stroke: #FECC00;
+
+.b-pact__text {
+  margin-bottom: 80px;
+
+  & h2 {
+    font-size: 24px;
+  }
+
+  & p,
+  & li {
+    font-size: 18px;
+  }
+
+  & ul {
+    margin-bottom: 20px;
+  }
+
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6,
+  & h1 {
+    margin-bottom: 40px;
   }
 }
 
-.b-contract-nav__text {
-  font-size: 16px;
+@media(max-width:900px) {
+  .b-pact {
+    flex-direction: column;
+  }
+
+  .b-pact__left-col {
+    flex: none;
+  }
 }
