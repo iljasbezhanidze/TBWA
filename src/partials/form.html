@@ -2,10 +2,14 @@
   <h2 class="b-contact-form__title b-title">Contact Us</h2>
   <div class="b-contact-form__wrapper">
     <form class="b-form">
-      <input class="b-form__input b-form__input_name" name="Name" placeholder="Name*" required type="text">
-      <input class="b-form__input b-form__input_email" name="E-mail" placeholder="E-mail*" required type="text">
-      <input class="b-form__input b-form__input_phone" name="Phone" placeholder="Phone" type="number">
-      <input class="b-form__input b-form__input_company" name="Company Name" placeholder="Company name" type="text">
+      <div class="b-form__box">
+        <input class="b-form__input b-form__input_name" name="Name" placeholder="Name*" required type="text">
+        <input class="b-form__input b-form__input_email" name="E-mail" placeholder="E-mail*" required type="text">
+      </div>
+      <div class="b-form__box">
+        <input class="b-form__input b-form__input_phone" name="Phone" placeholder="Phone" type="number">
+        <input class="b-form__input b-form__input_company" name="Company Name" placeholder="Company name" type="text">
+      </div>
       <textarea class="b-form__textfield" placeholder="Message..." name="Message" id=""></textarea>
       <div class="b-form__agrement-box">
         <div class="b-form__agrement">By using this form you agree to the processing of</div>
@@ -13,7 +17,7 @@
           personal data
         </a>
       </div>
-      <button class="b-form__submit b-btn b-btn_yellow" type="submit" data-modal-open="feedback">Send</button>
+      <button class="b-form__submit b-btn b-btn_yellow" type="submit" data-modal-open="feedback"><span class="b-btn__text">Send</span></button>
     </form>
   </div>
 </div>

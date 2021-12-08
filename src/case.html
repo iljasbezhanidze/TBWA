@@ -14,10 +14,11 @@
 </head>
 
 <body>
+  @include('partials/arrow-scroll.html')
   <main class="b-page">
     <div class="b-page__header">
       <div class="b-page__container-header">
-        @include('partials/header.html')
+        @include('partials/header-white.html')
       </div>
     </div>
     <div class="b-main b-page__main">
@@ -41,17 +42,20 @@
                 </p>
               </div>
             </div>
-            <div class="b-socials b-case-description__right-col">
-              <a class="b-socials__link" href="#">
-                <img class="b-socilas__icon" src="./img/fb.svg" alt="facebook link">
-              </a>
-              <a class="b-socials__link" href="#">
-                <img class="b-socilas__icon" src="./img/inst.svg" alt="instagram link">
-              </a>
-              <a class="b-socials__link" href="#">
-                <img class="b-socilas__icon" src="./img/twit.svg" alt="twitter link">
-              </a>
-            </div>
+           <div class="b-share  b-case-description__right-col">
+             <div class="b-share__title">Share</div>
+              <div class="b-socials b-share__buttons">
+                <a class="b-socials__link" href="#">
+                  <img class="b-socilas__icon" src="./img/fb.svg" alt="facebook link">
+                </a>
+                <a class="b-socials__link" href="#">
+                  <img class="b-socilas__icon" src="./img/inst.svg" alt="instagram link">
+                </a>
+                <a class="b-socials__link" href="#">
+                  <img class="b-socilas__icon" src="./img/twit.svg" alt="twitter link">
+                </a>
+              </div>
+           </div>
           </div>
         </div>
       </section>

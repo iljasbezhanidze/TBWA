@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  @include('partials/arrow-scroll.html')
   @include('partials/modal.html')
   <!-- @include('partials/pact.html') -->
   <main class="b-page b-page_home">
@@ -32,7 +33,7 @@
             <div class="b-first-screen__inner">
               <h1 class="b-main-title b-first-screen__title">We Are <br>The <br>Disruption® <br>Company</h1>
               <span class="b-first-screen__subtitle">— Steve Jobs</span>
-              <a class="b-btn b-first-screen__button" href="#">Watch</a>
+              <a class="b-btn b-first-screen__button" href="#"><span class="b-btn__text">Watch</span></a>
             </div>
           </div>
         </div>
@@ -69,7 +70,7 @@
               @include('partials/image-imposition3.html')
               <div class="b-projects__btn-wrapper">
                 <a class="b-btn b-btn_yellow b-projects_btn-more" href="#">
-                  View All Projects
+                  <span class="b-btn__text">View All Projects</span>
                 </a>
             </div>
           </div>
@@ -91,7 +92,7 @@
                     and breathe Disruption, and for more than two decades that's been the secret to our clients'
                     unprecedented success.
                   </div>
-                  <a  href="#" class="b-btn b-btn_yellow b-diagonal__btn">More on Disruption</a>
+                  <a  href="#" class="b-btn b-btn_yellow b-diagonal__btn"><span class="b-btn__text">More on Disruption</span></a>
                   <a class="b-diagonal__link" href="#">Download the Edges</a>
                 </div>
               </div>

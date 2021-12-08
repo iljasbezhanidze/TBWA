@@ -29,6 +29,7 @@
 @import "./components/first-screen-case";
 @import "./components/pact";
 @import "./components/modal";
+@import "./components/arrow-scroll";
 
 //disabled element in blocks
 .b-diagonal__link,
@@ -39,13 +40,16 @@
   display: none;
 }
 //enabled element
-.b-diagonal.b-diagonal_link .b-diagonal__link, //b-diagonal_link
+
 .b-diagonal.b-diagonal_btn .b-diagonal__btn,  //b-diagonal_btn
 .b-first-screen.b-first-screen_subtitle .b-first-screen__subtitle,  //b-first-screen_subtitle
 .b-first-screen.b-first-screen_title .b-first-screen__title,  //b-first-screen_title
 .b-first-screen.b-first-screen_btn .b-first-screen__button {  //b-first-screen_btn
   display: block;
 }
+.b-diagonal.b-diagonal_link .b-diagonal__link { //b-diagonal_link
+  display: inline-block;
+} 
 
 
 //fonts

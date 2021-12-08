@@ -19,6 +19,11 @@
   column-gap: 20px;
   justify-content: flex-start;
 }
+.b-form__box {
+  flex: 1 0 100%;
+  display: flex;
+  justify-content: space-between;
+}
 
 .b-form__input {
   background-color: #F2F2F2;
@@ -29,9 +34,11 @@
   border-radius: 0;
   outline: transparent;
   margin-bottom: 20px;
-  flex: 1 0 47%;
   font-size: 18px;
   caret-color: #FECC00;
+  width: 48.7%;
+  max-height: 89px;
+
 
   &::placeholder {
     opacity: .4;
@@ -84,16 +91,28 @@
 }
 
 .b-form__agrement-link {
-  display: inline;
+  display: inline-block;
   font-size: 18px;
   font-weight: 700;
   color: #FECC00;
   opacity: 1;
-  transition: opacity .2s;
+  transition: all .3s;
+  position: relative;
 
-  &:hover {
-    opacity: .75;
-  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    height: 1px;
+    width: 0%;
+    background-color: #FECC00;
+    transition: width .3s;
+}
+
+&:hover::after {
+    width: 100%;
+}
 }
 
 .b-form__submit {
@@ -122,6 +141,11 @@
 }
 
 @media(max-width:700px) {
+
+  .b-form__box {
+    flex-wrap: wrap;
+  }
+
   .b-form__input {
     flex-basis: 100%;
     padding: 20px 15px;

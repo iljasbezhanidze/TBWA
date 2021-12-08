@@ -1,0 +1,20 @@
+.b-arrow-scroll {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    background-color: #FECC00;
+    cursor: pointer;
+    opacity: 1;
+    transition: all .5s;
+    z-index: 9999;
+    
+    .b-show.b-lighten {
+        transition: all .5s;
+        opacity: 0;
+    }
+}
