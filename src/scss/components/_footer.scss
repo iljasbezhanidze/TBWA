@@ -15,11 +15,22 @@
 }
 
 .b-contracts__link {
-  text-decoration: underline !important;
   font-size: 18px;
+  position: relative;
+  display: inline-block !important;
+  &::after {
+      content: '';
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background-color: #000;
+      transition: width .3s;
+  }
 
-  &:hover {
-    opacity: .75;
+  &:hover::after {
+      width: 0;
   }
 }
 

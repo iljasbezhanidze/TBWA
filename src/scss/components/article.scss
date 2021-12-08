@@ -1,6 +1,13 @@
 .b-article-body {
   text-align: left;
 
+  &__item {
+    padding-bottom: 120px;
+  }
+
+  & p {
+    margin: revert;
+  }
 
   table {
     width: 100%;

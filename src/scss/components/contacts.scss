@@ -47,10 +47,10 @@
 .b-contacts-block__info {
   font-size: 24px;
   font-weight: 550;
-  transition: opacity .2s;
+  transition: color .2s;
 
   &:hover {
-    opacity: .75;
+    color: #FECC00;
   }
 }
 

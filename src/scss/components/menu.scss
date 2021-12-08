@@ -11,7 +11,7 @@
 
   &__content {
     background-color: #fff;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 13% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 256px 100%);
     display: flex;
     justify-content: space-between;
     overflow-y: auto !important;
@@ -66,11 +66,11 @@
 
 @media(max-width:1100px) {
   .b-header.b-toggle .b-burger__line:first-child {
-    transform: rotate(45deg) translate(6px, 8px);
+    transform: rotate(45deg) translate(4px, 9px);
   }
 
   .b-header.b-toggle .b-burger__line:last-child {
-    transform: rotate(-45deg) translate(1, -1px);
+    transform: rotate(-45deg) translate(0, -6px);
   }
 }
 
@@ -79,22 +79,25 @@
 .b-menu__list {
   display: flex;
   flex-direction: column;
-  padding-left: 140px;
+  padding-left: 200px;
+
+  @media(max-width:1200px){
+      padding-left: 150px;
+  }
 }
 
 .b-menu__list-item {
   width: 100%;
-  transition: all .2s;
+  transition: all .3s;
 
   .b-menu__list-link {
     font-size: 6.4vh;
     font-weight: 700;
-
   }
 
   &:hover {
     color: #FECC00;
-    transform: translateX(15px);
+    transform: translateX(30px);
   }
 }
 
@@ -154,15 +157,17 @@
   width: 20px;
   height: 20px;
   margin: auto;
+  object-fit: contain;
 }
 
 .b-contacts__address {
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 20px;
+  transition: color .2s;
 
   &:hover {
-    opacity: .75;
+    color: #FECC00;
   }
 }
 
@@ -170,18 +175,20 @@
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 20px;
+  transition: color .2s;
 
   &:hover {
-    opacity: .75;
+    color: #FECC00;
   }
 }
 
 .b-contacts__email {
   font-size: 24px;
   font-weight: 700;
+  transition: color .2s;
 
   &:hover {
-    opacity: .75;
+    color: #FECC00;
   }
 }
 
@@ -206,6 +213,10 @@
 
 @media(max-width:900px) {
   .b-menu {
+    clip-path: none;
+  }
+
+  .b-menu__content {
     clip-path: none;
   }
 

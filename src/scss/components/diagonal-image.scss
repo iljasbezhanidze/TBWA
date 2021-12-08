@@ -65,5 +65,20 @@
 }
 
 .b-diagonal__link {
-    text-decoration: underline !important;
+    position: relative;
+    display: inline-block !important;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: #000;
+        transition: width .3s;
+    }
+
+    &:hover::after {
+        width: 0;
+    }
 }

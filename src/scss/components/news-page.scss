@@ -34,9 +34,10 @@
     font-weight: 700;
     text-decoration: underline;
     color: #000;
+    transition: all .2s;
 
     &:hover {
-      opacity: .55;
+      color: #FECC00;
     }
 
     &_active {
