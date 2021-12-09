@@ -74,7 +74,10 @@ modalOpen.forEach(elem => {
     let target = event.currentTarget.getAttribute('data-modal-open');
     hideModals()
     document.body.classList.add('b-blockScroll')
-    document.querySelector(`[data-modal="${target}"]`).classList.add('b-show');
+    let targetModal = document.querySelector(`[data-modal="${target}"]`);
+    targetModal.classList.add('b-show');
+    let currentVideo = document.querySelector('video')
+    if (targetModal.contains(currentVideo)) currentVideo.play()
   });
 });
 
@@ -90,10 +93,11 @@ window.addEventListener('click', function (e) {
     if (el == e.target && e.target != moadalInner) {
       document.body.classList.remove('b-blockScroll')
       hideModals();
+      // let currentVideo = document.querySelector('video')
+      // if (targetModal.contains(currentVideo)) currentVideo.pause()
     };
   });
 });
-
 
 
 
