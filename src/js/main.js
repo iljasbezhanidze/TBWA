@@ -15,7 +15,6 @@ const firstScreen = document.querySelector('.b-first-screen')
 
 
 
-
 //---HAMBURGER MENU---
 //menu toggler
 burgerButton.onclick = () => {
@@ -202,16 +201,18 @@ var swiperArticle = new Swiper(".mySwiperArticle", {
 });
 
 //slider (different size pictures)
-var mySwiper = new Swiper(".mySwiper_team", {
-  slidesPerView: 'auto',
-  spaceBetween: 30,
-  // loop: true,
-  breakpoints: {
-    800: {
-      spaceBetween: 60,
+try {
+  var mySwiper = new Swiper(".mySwiper_team", {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    // loop: true,
+    breakpoints: {
+      800: {
+        spaceBetween: 60,
+      },
     },
-  },
-});
+  });
 
-//init & destroy slider (different size pictures) depending on viewport width
-window.innerWidth < 800 ? mySwiper() : mySwiper.destroy()
+  //init & destroy slider (different size pictures) depending on viewport width
+  window.innerWidth < 800 ? mySwiper() : mySwiper.destroy()
+} catch {}
