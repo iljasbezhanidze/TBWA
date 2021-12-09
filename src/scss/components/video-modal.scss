@@ -1,0 +1,11 @@
+.b-modal_video {
+    max-width: 80vw;
+    max-height: auto;
+    background-color: transparent;
+    padding: 0;
+}
+.b-modal-overlay_video {
+    padding: 0;
+    z-index: 999999;
+    transform: translate3d(0, 0, 0);
+}

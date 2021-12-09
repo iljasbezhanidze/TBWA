@@ -135,7 +135,7 @@ scrollBtn.addEventListener('click', backToTop);
 
 
 
-//---VIDEO---
+//------ LOAD VIDEO from link after click 'play' ---
 const videos = document.querySelectorAll('.b-video-article');
 let generateUrl = function (id) {
   let query = '?rel=0&showinfo=0&autoplay=1';
