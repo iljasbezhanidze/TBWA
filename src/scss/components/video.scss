@@ -42,7 +42,16 @@
 
 }
 
+@media(max-width:800px) {
+  .b-video {
 
+    & .b-video-article,
+    & iframe,
+    & img,
+    & .b-video-article__preview,
+    & .b-video-article {
+      height: 70vh !important;
+    }
+  }
 
-
-.b-video-article__arrow {}
+}

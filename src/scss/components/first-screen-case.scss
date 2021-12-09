@@ -21,3 +21,13 @@ position: relative;
     margin-bottom: 60px;
     max-width: 940px;
 }
+
+@media(max-height: 670px){
+    .b-first-screen_case.b-first-screen_title,
+    .b-media__item_case {
+        height: 110vh;
+    }
+    .b-case {
+        transform: translate(-50%, -40%);
+    }
+}

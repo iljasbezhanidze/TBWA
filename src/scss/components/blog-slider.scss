@@ -110,9 +110,9 @@
   .mySwiperBlog .swiper-slide {
     width: auto;
   }
-  .b-blog-slider__slider-btns {
-    display: none;
-  }
+  // .b-blog-slider__slider-btns {
+  //   display: none;
+  // }
 }
 
 :root {
@@ -195,8 +195,12 @@
 
   .swiper-button-next:after,
   .swiper-button-prev:after {
-    display: none;
+    transform: scale(.95);
   }
+  .b-slider__nav {
+    width: 100px !important;
+  }
+  
 
   .b-blog-slider__slider-btns {
     width: 100px;

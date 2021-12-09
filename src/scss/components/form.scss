@@ -116,7 +116,9 @@
 }
 
 .b-form__submit {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -147,6 +149,9 @@
   }
 
   .b-form__input {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
     flex-basis: 100%;
     padding: 20px 15px;
     font-size: 14px;

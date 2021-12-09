@@ -73,12 +73,74 @@
     </section>
     <section class="b-main__section pad-top-mob">
       <div class="b-main__container">
-        @include('partials/contacts.html')
+        <div class="b-contacts-section">
+          <h2 class="b-contacts-section__title b-title">Contact</h2>
+          <div class="b-contacts-block b-contacts-section__wrapper">
+            <div class="b-contacts-block__item">
+              <h3 class="b-contacts-block__item-title">Address</h3>
+              <address class="b-contacts-block__address b-contacts-block__info">
+                <a class="b-contacts-block__map" href="https://goo.gl/maps/JwYH8VHsaDnoREREA">3, Sportyvna sq., exit 4, 4th floor Kyiv, Ukrain 01001</a>
+              </address>
+            </div>
+            <div class="b-contacts-block__item">
+              <h3 class="b-contacts-block__item-title">Phone</h3>
+              <a class="b-contacts-block__tel b-contacts-block__info" href="tel:+380445947733">
+                  +380 44 594 7733
+                </a>
+            </div>
+            <div class="b-contacts-block__item">
+              <h3 class="b-contacts-block__item-title">E-mail</h3>
+              <a class="b-contacts-block__email b-contacts-block__info" href="mailto:office@tbwa.com.ua">office@tbwa.com.ua</a>
+            </div>
+            <div class="b-contacts-block__item">
+              <h3 class="b-contacts-block__item-title">Social</h3>
+              <div class="b-socials b-contacts-block__links">
+                <a class="b-socials__link" href="#">
+                  <img class="b-socilas__icon" src="./img/fb.svg" alt="facebook link">
+                </a>
+                <a class="b-socials__link" href="#">
+                  <img class="b-socilas__icon" src="./img/inst.svg" alt="instagram link">
+                </a>
+                <a class="b-socials__link" href="#">
+                  <img class="b-socilas__icon" src="./img/twit.svg" alt="twitter link">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </section>
     <section class="b-main__section">
       <div class="b-main__container">
-        @include('partials/form.html')
+        <section class="b-main__section pad-top-mob">
+          <div class="b-main__container">
+            <div class="b-contact-form">
+              <h2 class="b-contact-form__title b-title">Join Us</h2>
+              <div class="b-contact-form__wrapper">
+                <form class="b-form">
+                  <div class="b-form__box">
+                    <input class="b-form__input b-form__input_name" name="Name" placeholder="Name*" required type="text">
+                    <input class="b-form__input b-form__input_email" name="E-mail" placeholder="E-mail*" required type="text">
+                  </div>
+                  <div class="b-form__box">
+                    <input class="b-form__input b-form__input_phone" name="Phone" placeholder="Phone" type="number">
+                    <input class="b-form__input b-form__input_company" name="Company Name" placeholder="Company name" type="text">
+                  </div>
+                  <textarea class="b-form__textfield" placeholder="Message..." name="Message" id=""></textarea>
+                  <div class="b-form__agrement-box">
+                    <div class="b-form__agrement">By using this form you agree to the processing of</div>
+                    <a class="b-form__agrement-link" href="#" data-modal-open="personal date">
+                      personal data
+                    </a>
+                  </div>
+                  <button class="b-form__submit b-btn b-btn_yellow" type="submit" data-modal-open="feedback"><span class="b-btn__text">Send</span></button>
+                </form>
+              </div>
+            </div>
+            
+          </div>
+        </section>
       </div>
     </section>
     <div class="b-page__footer">

@@ -60,6 +60,12 @@
   }
 }
 
+@media(max-width:600px){
+  .b-person__name {
+    margin-bottom: 0;
+  }
+}
+
 .b-person__positiopn {
   font-size: 18px;
   max-width: 210px;

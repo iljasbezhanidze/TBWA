@@ -260,10 +260,11 @@ body {
   display: flex !important;
 }
 
-
-
-
-
+@media(max-width:660px){
+  .b-main__section_pb-sl {
+    padding-bottom:  60px;
+  }    
+}
 
 
 
