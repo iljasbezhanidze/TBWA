@@ -205,6 +205,7 @@ try {
   var mySwiper = new Swiper(".mySwiper_team", {
     slidesPerView: 'auto',
     spaceBetween: 30,
+    centeredSlides: true,
     // loop: true,
     breakpoints: {
       800: {
