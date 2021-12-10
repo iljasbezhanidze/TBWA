@@ -10,7 +10,7 @@ const closeModal = document.querySelectorAll('[data-modal-close]')
 const forms = document.querySelectorAll('.b-form')
 const scrollBtn = document.querySelector('.b-arrow-scroll')
 const firstScreen = document.querySelector('.b-first-screen')
-
+const currentPlayVideo = document.querySelectorAll('.b-modal .b-video')
 
 
 
@@ -77,7 +77,10 @@ modalOpen.forEach(elem => {
     let targetModal = document.querySelector(`[data-modal="${target}"]`);
     targetModal.classList.add('b-show');
     let currentVideo = document.querySelector('video')
-    if (targetModal.contains(currentVideo)) currentVideo.play()
+    if (targetModal.contains(currentVideo)) {
+      currentVideo.play()
+      currentVideo.setAttribute('data-play', '')
+    }
   });
 });
 
@@ -93,13 +96,17 @@ window.addEventListener('click', function (e) {
     if (el == e.target && e.target != moadalInner) {
       document.body.classList.remove('b-blockScroll')
       hideModals();
-      // let currentVideo = document.querySelector('video')
-      // if (targetModal.contains(currentVideo)) currentVideo.pause()
+      closeVideo();
     };
   });
 });
 
-
+function closeVideo() {
+  currentPlayVideo.forEach(el => {
+    el.pause();
+    el.currentTime = 0;
+  })
+}
 
 
 
