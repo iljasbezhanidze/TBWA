@@ -184,17 +184,24 @@ videos.forEach((el) => {
 
 
 //PARALLAX
-function parallax() {
-  let parallaxBackground = document.querySelector('.b-main__parrlax-background')
+window.addEventListener('scroll', () => {
   let mainWinHeight = document.documentElement.clientHeight;
-  let scroll2 = window.pageYOffset * 0.2;
-  // parallaxBackground.style.transform = `translateY()`
-  parallaxBackground.style.left = `-${201 - scroll2}%`
-  console.log(window.getComputedStyle(parallaxBackground).left)
-}
-parallax()
+  let scroll2 = window.pageYOffset * 0.1;
+  
+  //parallax background
+  (function() {
+    let parallaxBackground = document.querySelector('.b-main__parrlax-background')
+    parallaxBackground.style.left = `-${201 - scroll2}%`
+  })();
 
-window.addEventListener('scroll', parallax)
+  //parallax to top title inner
+  (function() {
+    let parallaxTitle = document.querySelector('.b-first-screen__inner.b-parallax-fIrst-screen');
+    let scroll3 = window.pageYOffset * 0.5;
+    parallaxTitle.style.paddingBottom = `${scroll3 / 2}px`
+    console.log(getComputedStyle(parallaxTitle).top)
+  })();
+})
 
 
 
