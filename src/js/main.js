@@ -129,7 +129,7 @@ function trackScroll() {
 
 function backToTop() {
   if (window.pageYOffset > 0) {
-    window.scrollBy(0, -80);
+    window.scrollBy(0, -100);
     setTimeout(backToTop, 0);
   }
 }
@@ -174,6 +174,29 @@ videos.forEach((el) => {
     el.querySelector('button').remove();
   });
 });
+
+
+
+
+
+
+
+
+
+//PARALLAX
+function parallax() {
+  let parallaxBackground = document.querySelector('.b-main__parrlax-background')
+  let mainWinHeight = document.documentElement.clientHeight;
+  let scroll2 = window.pageYOffset * 0.2;
+  // parallaxBackground.style.transform = `translateY()`
+  parallaxBackground.style.left = `-${201 - scroll2}%`
+  console.log(window.getComputedStyle(parallaxBackground).left)
+}
+parallax()
+
+window.addEventListener('scroll', parallax)
+
+
 
 
 
