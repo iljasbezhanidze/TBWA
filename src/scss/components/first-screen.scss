@@ -1,3 +1,4 @@
+
 .b-first-screen {
   width: 100%;
   position: relative;
@@ -16,7 +17,18 @@
   padding-bottom: 0;
 }
 
-.b-media.b-first-screen__media {}
+.b-first-screen.b-parallax-fIrst-screen {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 2;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0,);
+}
+.b-main__section:first-child {
+  height: 100vh;
+  margin-bottom: 65vh;
+}
 
 .b-first-screen__inner {
   position: absolute;
@@ -27,6 +39,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  user-select: none;
 }
 
 .b-main-title {

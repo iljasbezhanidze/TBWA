@@ -197,10 +197,24 @@ window.addEventListener('scroll', () => {
   //parallax to top title inner
   (function() {
     let parallaxTitle = document.querySelector('.b-first-screen__inner.b-parallax-fIrst-screen');
-    let scroll3 = window.pageYOffset * 0.5;
-    parallaxTitle.style.paddingBottom = `${scroll3 / 2}px`
-    console.log(getComputedStyle(parallaxTitle).top)
+    let scroll3 = window.pageYOffset ;
+    parallaxTitle.style.paddingBottom = `${scroll3 / 2.5}px`
   })();
+
+  // parallax first window
+  (function() {
+    let parallaxFirstScreen = document.querySelector('.b-first-screen.b-parallax-fIrst-screen')
+    let scroll4 = window.pageYOffset;
+    parallaxFirstScreen.style.top = `-${scroll4 / 8}px`
+  })();
+
+  // if(window.pageYOffset < mainWinHeight) {
+  //   (function() {
+  //     let firstContentParralax = document.querySelector('.b-main__section:nth-child(2)')
+  //     let scroll5 = window.pageYOffset;
+  //     firstContentParralax.style.
+  //   })
+  // }
 })
 
 

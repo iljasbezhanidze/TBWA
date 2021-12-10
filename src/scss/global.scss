@@ -23,7 +23,10 @@ body {
   z-index: 1;
   clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
 }
-
+.b-parallax-fIrst-screen {
+  position: relative;
+  top: 0;
+}
 
 
 .b-page {
@@ -43,8 +46,8 @@ body {
 }
 
 .b-page__header {
-  z-index: 9999;
-  position: absolute;
+  z-index: 2;
+  position: fixed;
   left: 0;
   right: 0;
 }
@@ -83,8 +86,6 @@ body {
   padding-right: 30px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  // min-height: 100vh;
 }
 
 .b-diagonal__section {
