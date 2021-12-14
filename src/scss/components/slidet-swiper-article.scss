@@ -1,14 +1,23 @@
 .mySwiperArticle {
+  & .swiper-wrapper {
+    max-height: 80vh;
+    align-items: center;
+  }
   & .swiper-slide {
     @media (max-width: 960px) {
       width: 100% !important;
       margin: 0 !important;
+      transform: none !important;
 
       & .swiper-slide__img {
         margin: 0 !important;
         padding: 0 !important;
         width: 100% !important;
       }
+    }
+
+    & .swiper-slide__img {
+      width: 100%;
     }
   }
 }

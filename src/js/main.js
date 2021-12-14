@@ -13,8 +13,6 @@ const firstScreen = document.querySelector('.b-first-screen')
 const currentPlayVideo = document.querySelectorAll('.b-modal .b-video')
 
 
-
-
 //---HAMBURGER MENU---
 //menu toggler
 burgerButton.onclick = () => {
@@ -47,16 +45,10 @@ window.addEventListener('click', function (event) {
 })
 
 
-
-
-
 //---CASCADE STYLE MENU ITEMS---
 for (let i = 0, amount = 0; i < menuItems.length; i++, amount += 30) {
   menuItems[i].style.paddingLeft = `${amount}px`
 }
-
-
-
 
 
 //---MODALS---
@@ -97,7 +89,8 @@ window.addEventListener('click', function (e) {
       document.body.classList.remove('b-blockScroll')
       hideModals();
       closeVideo();
-    };
+    }
+    ;
   });
 });
 
@@ -107,11 +100,6 @@ function closeVideo() {
     el.currentTime = 0;
   })
 }
-
-
-
-
-
 
 
 //SCROLL TO TOP
@@ -136,14 +124,6 @@ function backToTop() {
 
 window.addEventListener('scroll', trackScroll);
 scrollBtn.addEventListener('click', backToTop);
-
-
-
-
-
-
-
-
 
 
 //------ LOAD VIDEO from link after click 'play' ---
@@ -176,9 +156,6 @@ videos.forEach((el) => {
 });
 
 
-
-
-
 //---SLIDERS---
 //init slider (width articles)
 var swiperBlog = new Swiper(".mySwiperBlog", {
@@ -202,12 +179,13 @@ var swiperBlog = new Swiper(".mySwiperBlog", {
 var swiperArticle = new Swiper(".mySwiperArticle", {
   observer: true,
   observeParents: true,
-  slidesPerView: 'auto',
-  spaceBetween: 30,
+  slidesPerView: 1,
+  spaceBetween: 0,
   loop: true,
   breakpoints: {
     960: {
-      spaceBetween: 0,
+      spaceBetween: 30,
+      slidesPerView: 1.3
     },
   },
   navigation: {
@@ -219,23 +197,36 @@ var swiperArticle = new Swiper(".mySwiperArticle", {
 
 //slider (different size pictures)
 try {
-  var mySwiper = new Swiper(".mySwiper_team", {
-    observer: true,
-    observeParents: true,
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-    centeredSlides: true,
-    // loop: true,
-    breakpoints: {
-      800: {
-        spaceBetween: 60,
-      },
-    },
-  });
+  let mySwiper = null
 
   //init & destroy slider (different size pictures) depending on viewport width
-  window.innerWidth < 800 ? mySwiper() : mySwiper.destroy()
-} catch {}
+  window.addEventListener('resize', e => {
+    if (window.innerWidth < 800) {
+      mySwiper = new Swiper(".mySwiper_team", {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        centeredSlides: true,
+        // loop: true,
+        breakpoints: {
+          800: {
+            spaceBetween: 60,
+            slidesPerView: 4
+          },
+        },
+      });
+    } else {
+      if (mySwiper?.destroy) {
+        mySwiper.destroy(false, true)
+        mySwiper.detachEvents()
+        mySwiper.disable()
+        mySwiper = undefined
+      }
+    }
+  })
+} catch {
+}
 
 document.addEventListener('DOMContentLoaded', e => {
   class HomeCoverParallax {
@@ -276,6 +267,7 @@ document.addEventListener('DOMContentLoaded', e => {
       }
     }
   }
+
   class ShowHideOtherSite {
     constructor() {
       this.first = document.querySelector('.b-main__first')
@@ -313,7 +305,7 @@ document.addEventListener('DOMContentLoaded', e => {
     }
 
     showHide() {
-      if (window.scrollY > window.innerHeight) {
+      if (window.scrollY > (window.innerHeight / 2)) {
         this.skewBlock.style.transform = `translate3d(0, 0, 0)`
         this.other.style.transform = `translate3d(0, 0, 0)`
       } else {
@@ -322,10 +314,11 @@ document.addEventListener('DOMContentLoaded', e => {
       }
     }
   }
+
   class ImagesScrollScale {
     constructor() {
-      this.images = document.querySelectorAll('.b-imposition__second-img, .b-imposition__main-img')
-      if (!this.images || this.images.length === 0) return false
+      // this.images = document.querySelectorAll('.b-imposition__second-img, .b-imposition__main-img')
+      // if (!this.images || this.images.length === 0) return false
       this.firstImages = document.querySelectorAll('.b-imposition__main-img')
       if (!this.firstImages || this.firstImages.length === 0) return false
       this.secondImages = document.querySelectorAll('.b-imposition__second-img')
@@ -334,14 +327,14 @@ document.addEventListener('DOMContentLoaded', e => {
     }
 
     init() {
-      for (let i = 0; i < this.images.length; i++) {
-        this.images[i].style.transform = 'scale(1.1)'
-      }
+      // for (let i = 0; i < this.images.length; i++) {
+      //   this.images[i].style.transform = 'scale(1.1)'
+      // }
       for (let i = 0; i < this.secondImages.length; i++) {
-        this.secondImages[i].parentElement.style.transform = 'translate3d(0, 50%, 0)'
+        this.secondImages[i].style.transform = 'translate3d(0, 50%, 0)'
       }
       for (let i = 0; i < this.firstImages.length; i++) {
-        this.firstImages[i].parentElement.style.transform = 'translate3d(0, 20%, 0)'
+        this.firstImages[i].style.transform = 'scale(1.5)'
       }
 
       this.listener()
@@ -354,44 +347,64 @@ document.addEventListener('DOMContentLoaded', e => {
     }
 
     scrollHandle() {
-      for (let i = 0; i < this.images.length; i++) {
-        const image = this.images[i]
-        const imagePosOpts = image.getBoundingClientRect()
-        const imageParent = image.parentElement
-        const imageParentPosOpts = imageParent.getBoundingClientRect()
-        const windowHeight = window.innerHeight
-        const offset = (imageParentPosOpts.top - windowHeight + (imageParentPosOpts.height / 2)) * -1
-
-        if (offset > 0) {
-          image.style.transform = `scale(1)`
-        } else {
-          image.style.transform = `scale(1.1)`
-        }
-      }
+      // for (let i = 0; i < this.images.length; i++) {
+      //   const image = this.images[i]
+      //   const imagePosOpts = image.getBoundingClientRect()
+      //   const imageParent = image.parentElement
+      //   const imageParentPosOpts = imageParent.getBoundingClientRect()
+      //   const windowHeight = window.innerHeight
+      //   const offset = (imageParentPosOpts.top - windowHeight + (imageParentPosOpts.height / 2)) * -1
+      //
+      //   if (offset > 0) {
+      //     image.style.transform = `scale(1)`
+      //   } else {
+      //     image.style.transform = `scale(1.1)`
+      //   }
+      // }
 
       for (let i = 0; i < this.secondImages.length; i++) {
         const image = this.secondImages[i]
+        const imagePosOpts = image.getBoundingClientRect()
         const parent = image.parentElement
+        const parentPosOpts = parent.getBoundingClientRect()
+        //
+        const movingHeight = window.innerHeight + parentPosOpts.height - (window.innerHeight * 0.25)
+        const bottomPartOffsetToTop = parentPosOpts.top + parentPosOpts.height
+        let translateY = 0
 
-        if (parent.getBoundingClientRect().top - window.innerHeight <= 0) {
-          parent.style.transform = 'translate3d(0, 0, 0)'
-        } else {
-          parent.style.transform = 'translate3d(0, 50%, 0)'
+        if ((window.innerHeight - parentPosOpts.top) > 0) {
+          translateY = 50 - ((((window.innerHeight - parentPosOpts.top) / window.innerHeight) * 100) / 2)
+        }
+
+        if (bottomPartOffsetToTop > 0 && bottomPartOffsetToTop < movingHeight) {
+          const posOnTheLine = Math.abs((bottomPartOffsetToTop / movingHeight) - 1)
+          const percentPosOnTheLine = /*Math.round(*/posOnTheLine * 100/*)*/
+          const currentPos = percentPosOnTheLine > 50 ? /*(100 - percentPosOnTheLine)*/50 : percentPosOnTheLine
+          const scale = (50 - currentPos) / 100 + 1
+          image.style.transform = `scale(${scale}) translate3d(0, ${translateY}%, 0)`
         }
       }
 
       for (let i = 0; i < this.firstImages.length; i++) {
         const image = this.firstImages[i]
+        const imagePosOpts = image.getBoundingClientRect()
         const parent = image.parentElement
+        const parentPosOpts = parent.getBoundingClientRect()
+        //
+        const movingHeight = window.innerHeight + parentPosOpts.height - (window.innerHeight * 0.25)
+        const bottomPartOffsetToTop = parentPosOpts.top + parentPosOpts.height
 
-        if (parent.getBoundingClientRect().top - window.innerHeight <= 0) {
-          parent.style.transform = 'translate3d(0, 0, 0)'
-        } else {
-          parent.style.transform = 'translate3d(0, 20%, 0)'
+        if (bottomPartOffsetToTop > 0 && bottomPartOffsetToTop < movingHeight) {
+          const posOnTheLine = Math.abs((bottomPartOffsetToTop / movingHeight) - 1)
+          const percentPosOnTheLine = /*Math.round(*/posOnTheLine * 100/*)*/
+          const currentPos = percentPosOnTheLine > 50 ? (100 - percentPosOnTheLine) : percentPosOnTheLine
+          const scale = (50 - currentPos) / 100 + 1
+          image.style.transform = `scale(${scale})`
         }
       }
     }
   }
+
   class Header {
     constructor() {
       this.header = document.querySelector('.b-page__header')
@@ -430,6 +443,7 @@ document.addEventListener('DOMContentLoaded', e => {
       this.lastScrollY = currentScrollY
     }
   }
+
   new HomeCoverParallax()
   new ShowHideOtherSite()
   new ImagesScrollScale()
