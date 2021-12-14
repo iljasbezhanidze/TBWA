@@ -22,7 +22,7 @@ burgerButton.onclick = () => {
   document.body.classList.toggle('b-blockScroll')
 }
 
-//watching for menu 
+//watching for menu
 const observer = new MutationObserver(containClass)
 observer.observe(header, {
   'attributes': true
@@ -84,13 +84,13 @@ modalOpen.forEach(elem => {
   });
 });
 
-//close btn active 
+//close btn active
 closeModal.forEach(el => el.onclick = () => {
   hideModals();
   document.body.classList.remove('b-blockScroll');
 });
 
-//close to click overlay 
+//close to click overlay
 window.addEventListener('click', function (e) {
   modals.forEach(el => {
     if (el == e.target && e.target != moadalInner) {
@@ -182,6 +182,8 @@ videos.forEach((el) => {
 //---SLIDERS---
 //init slider (width articles)
 var swiperBlog = new Swiper(".mySwiperBlog", {
+  observer: true,
+  observeParents: true,
   slidesPerView: 'auto',
   spaceBetween: 20,
   loop: true,
@@ -196,13 +198,16 @@ var swiperBlog = new Swiper(".mySwiperBlog", {
   },
 });
 
+
 var swiperArticle = new Swiper(".mySwiperArticle", {
+  observer: true,
+  observeParents: true,
   slidesPerView: 'auto',
   spaceBetween: 30,
   loop: true,
   breakpoints: {
-    800: {
-      spaceBetween: 60,
+    960: {
+      spaceBetween: 0,
     },
   },
   navigation: {
@@ -211,9 +216,12 @@ var swiperArticle = new Swiper(".mySwiperArticle", {
   },
 });
 
+
 //slider (different size pictures)
 try {
   var mySwiper = new Swiper(".mySwiper_team", {
+    observer: true,
+    observeParents: true,
     slidesPerView: 'auto',
     spaceBetween: 30,
     centeredSlides: true,
@@ -228,3 +236,202 @@ try {
   //init & destroy slider (different size pictures) depending on viewport width
   window.innerWidth < 800 ? mySwiper() : mySwiper.destroy()
 } catch {}
+
+document.addEventListener('DOMContentLoaded', e => {
+  class HomeCoverParallax {
+    constructor() {
+      this.place = document.querySelector('.b-main__section_first-screen')
+      if (!this.place) return false
+      this.titleElement = this.place.querySelector('.b-first-screen__title')
+      this.buttonElement = this.place.querySelector('.b-first-screen__button')
+      this.image = this.place.querySelector('.b-media__item')
+
+      this.init()
+    }
+
+    init() {
+      this.listener()
+    }
+
+    listener() {
+      window.addEventListener('scroll', e => {
+        this.scrollHandle()
+      })
+    }
+
+    scrollHandle() {
+      const placeOffsetTop = window.scrollY
+      const height = window.innerHeight / 2
+
+      const percentShow = Math.round(Math.abs(placeOffsetTop / height * 100))
+
+      if (percentShow >= 0/* && percentShow <= 100*/) {
+
+        const offset = Math.round((percentShow * height) / 100 / 2)
+        this.titleElement.style.transform = `translate3d(0, -${offset}px, 0)`
+        this.buttonElement.style.transform = `translate3d(0, -${offset}px, 0)`
+        // this.image.style.transform = `translate3d(0, ${offset / 2}px, 0)`
+
+        // this.place.style.transform = `translate3d(0, ${placeOffsetTop / 1.33}px, 0)`
+      }
+    }
+  }
+  class ShowHideOtherSite {
+    constructor() {
+      this.first = document.querySelector('.b-main__first')
+      if (!this.first) return false
+      this.other = document.querySelector('.b-main__other')
+      if (!this.other) return false
+      this.skewBlock = document.querySelector('.b-main__skew-block')
+      if (!this.skewBlock) return false
+      this.offset = 38
+
+      this.init()
+    }
+
+    init() {
+      this.listener()
+      this.showHide()
+
+      // this.other.style.transform = `translate3d(-100vw, 0, 0)`
+      // this.skewBlock.style.transform = `translate3d(calc(-100vw - ${this.offset}vh), 0, 0)`
+    }
+
+    listener() {
+      window.addEventListener('scroll', e => {
+        this.scrollHandle()
+      })
+    }
+
+    scrollHandle() {
+      this.showHide()
+
+      // let offset = Math.round(window.scrollY / window.innerHeight * 100)
+      // offset = offset >= 100 ? 100 : offset
+      // this.skewBlock.style.transform = `translate3d(calc(${offset - 100}vw - ${this.offset - (offset / 100 * this.offset)}vh), 0, 0)`
+      // this.other.style.transform = `translate3d(${offset - 100}vw, 0, 0)`
+    }
+
+    showHide() {
+      if (window.scrollY > window.innerHeight) {
+        this.skewBlock.style.transform = `translate3d(0, 0, 0)`
+        this.other.style.transform = `translate3d(0, 0, 0)`
+      } else {
+        this.skewBlock.style.transform = `translate3d(calc(-100vw - 38vh), 0, 0)`
+        this.other.style.transform = `translate3d(-100vw, 0, 0)`
+      }
+    }
+  }
+  class ImagesScrollScale {
+    constructor() {
+      this.images = document.querySelectorAll('.b-imposition__second-img, .b-imposition__main-img')
+      if (!this.images || this.images.length === 0) return false
+      this.firstImages = document.querySelectorAll('.b-imposition__main-img')
+      if (!this.firstImages || this.firstImages.length === 0) return false
+      this.secondImages = document.querySelectorAll('.b-imposition__second-img')
+      if (!this.secondImages || this.secondImages.length === 0) return false
+      this.init()
+    }
+
+    init() {
+      for (let i = 0; i < this.images.length; i++) {
+        this.images[i].style.transform = 'scale(1.1)'
+      }
+      for (let i = 0; i < this.secondImages.length; i++) {
+        this.secondImages[i].parentElement.style.transform = 'translate3d(0, 50%, 0)'
+      }
+      for (let i = 0; i < this.firstImages.length; i++) {
+        this.firstImages[i].parentElement.style.transform = 'translate3d(0, 20%, 0)'
+      }
+
+      this.listener()
+    }
+
+    listener() {
+      window.addEventListener('scroll', e => {
+        this.scrollHandle()
+      })
+    }
+
+    scrollHandle() {
+      for (let i = 0; i < this.images.length; i++) {
+        const image = this.images[i]
+        const imagePosOpts = image.getBoundingClientRect()
+        const imageParent = image.parentElement
+        const imageParentPosOpts = imageParent.getBoundingClientRect()
+        const windowHeight = window.innerHeight
+        const offset = (imageParentPosOpts.top - windowHeight + (imageParentPosOpts.height / 2)) * -1
+
+        if (offset > 0) {
+          image.style.transform = `scale(1)`
+        } else {
+          image.style.transform = `scale(1.1)`
+        }
+      }
+
+      for (let i = 0; i < this.secondImages.length; i++) {
+        const image = this.secondImages[i]
+        const parent = image.parentElement
+
+        if (parent.getBoundingClientRect().top - window.innerHeight <= 0) {
+          parent.style.transform = 'translate3d(0, 0, 0)'
+        } else {
+          parent.style.transform = 'translate3d(0, 50%, 0)'
+        }
+      }
+
+      for (let i = 0; i < this.firstImages.length; i++) {
+        const image = this.firstImages[i]
+        const parent = image.parentElement
+
+        if (parent.getBoundingClientRect().top - window.innerHeight <= 0) {
+          parent.style.transform = 'translate3d(0, 0, 0)'
+        } else {
+          parent.style.transform = 'translate3d(0, 20%, 0)'
+        }
+      }
+    }
+  }
+  class Header {
+    constructor() {
+      this.header = document.querySelector('.b-page__header')
+      if (!this.header) return false
+      this.lastScrollY = 0
+
+      this.init()
+    }
+
+    init() {
+      this.listener()
+    }
+
+    listener() {
+      window.addEventListener('scroll', e => {
+        this.scrollHandle()
+      })
+    }
+
+    scrollHandle() {
+      const currentScrollY = window.scrollY
+      if (currentScrollY > this.lastScrollY) {
+        this.header.classList.add('hide')
+      } else {
+        this.header.classList.remove('hide')
+      }
+
+      if (currentScrollY !== 0) {
+        this.header.classList.add('bgc-dark')
+        this.header.classList.add('small')
+      } else {
+        this.header.classList.remove('bgc-dark')
+        this.header.classList.remove('small')
+      }
+
+      this.lastScrollY = currentScrollY
+    }
+  }
+  new HomeCoverParallax()
+  new ShowHideOtherSite()
+  new ImagesScrollScale()
+  new Header()
+})

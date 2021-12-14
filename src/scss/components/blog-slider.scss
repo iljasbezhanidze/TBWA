@@ -100,6 +100,16 @@
   height: var(--sliderHeight);
   width: var(--slideiwidth);
   margin-bottom: 40px;
+
+  &:hover {
+    & .b-article__picture {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.b-article__picture {
+  transition: all 0.5s ease;
 }
 
 .b-article_slide {
@@ -200,7 +210,7 @@
   .b-slider__nav {
     width: 100px !important;
   }
-  
+
 
   .b-blog-slider__slider-btns {
     width: 100px;

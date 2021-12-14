@@ -1,7 +1,7 @@
 .b-right-side-text {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
   column-gap: 50px;
 
   @media(max-width:608px) {
@@ -13,8 +13,6 @@
 .b-right-side-text_left-col {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
 }
 
 .b-right-side-text_right-col {
@@ -35,7 +33,7 @@
 }
 
 .b-right-side-text__title {
-  margin-bottom: auto;
+  margin-bottom: 40px;
 
   @media(max-width:608px) {
     margin-bottom: 30px;
@@ -84,7 +82,7 @@
   .b-right-side-text_right-col {
     max-width: 100%;
     margin-bottom: 40px;
-    
+
     @media(max-width:440px){
         margin-bottom: 30px;
     }

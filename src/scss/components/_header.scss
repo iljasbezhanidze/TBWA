@@ -76,7 +76,9 @@
   transition: opacity .4s;
 }
 .b-header.b-toggle .b-logo {
-  opacity: 0;
+//  opacity: 0;
+  position: relative;
+  z-index: 1000;
 }
 
 .b-burger {
@@ -92,8 +94,8 @@
   z-index: 9999;
   position: relative;
   transition: opacity .2s;
-  
-  
+
+
   &:hover {
     opacity: .75;
   }
@@ -105,7 +107,8 @@
 
 .b-burger__line {
   width: calc(var(--burger) + 2px);
-  height: calc(var(--burger) / 7.33);
+  //height: calc(var(--burger) / 7.33);
+  height: 6px;
   background-color: #000;
 }
 

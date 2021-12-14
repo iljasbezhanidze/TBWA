@@ -1,8 +1,6 @@
 .b-video {
   width: 100%;
   position: relative;
-  // max-height: 988px;
-  //   aspect-ratio: 16 / 9;
 
   .b-video-article__preview,
   .b-video-article {
@@ -54,4 +52,9 @@
     }
   }
 
+}
+
+
+.b-video-article {
+  position: relative;
 }

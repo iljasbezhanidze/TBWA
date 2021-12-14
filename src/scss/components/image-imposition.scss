@@ -10,13 +10,15 @@
 .b-imposition__img-inner_main,
 .b-imposition__img-inner_second {
   overflow: hidden;
+  transition: all 0.5s ease-in;
 }
 
 .b-imposition__second-img,
 .b-imposition__main-img {
   width: 100%;
-  // transition: all .7s;
+   transition: all .7s;
   object-fit: cover;
+  transform: scale(1.1);
 }
 
 // .b-imposition__second-img:hover,
@@ -50,6 +52,7 @@
 }
 
 .b-imposition_reverse .b-imposition__img-inner_second {
+
   @media(max-width:1920px) {
     width: 80.8vw;
     margin-right: auto;
@@ -110,7 +113,7 @@
   line-height: 1.2;
   cursor: pointer;
   transition: color .2s;
-  
+
   &:hover {
     color: #FECC00;
   }

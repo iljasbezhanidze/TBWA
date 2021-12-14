@@ -43,6 +43,12 @@
 .b-person__photo {
   object-fit: contain;
   margin-bottom: 40px;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    opacity: 0.85;
+    transform: scale(1.03);
+  }
 }
 
 .b-person__name {

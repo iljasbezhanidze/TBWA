@@ -1,0 +1,14 @@
+.mySwiperArticle {
+  & .swiper-slide {
+    @media (max-width: 960px) {
+      width: 100% !important;
+      margin: 0 !important;
+
+      & .swiper-slide__img {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+      }
+    }
+  }
+}

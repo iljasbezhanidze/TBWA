@@ -12,10 +12,15 @@
 
   &__content {
     background-color: #fff;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 256px 100%);
+    //clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 256px 100%);
+    clip-path: polygon(200px 0, 100% 0, 100% 100%, 450px 100%);
     display: flex;
     justify-content: space-between;
     overflow-y: auto !important;
+
+    @media (max-width: 1200px) {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 256px 100%);
+    }
   }
 
   &__contacts {}
@@ -80,7 +85,7 @@
 .b-menu__list {
   display: flex;
   flex-direction: column;
-  padding-left: 200px;
+  padding-left: calc(10vw + 200px);
 
   @media(max-width:1200px){
       padding-left: 150px;

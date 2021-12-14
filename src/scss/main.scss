@@ -31,6 +31,7 @@
 @import "./components/modal";
 @import "./components/arrow-scroll";
 @import "./components/video-modal";
+@import "./components/slidet-swiper-article";
 
 //disabled element in blocks
 .b-diagonal__link,
@@ -50,7 +51,7 @@
 }
 .b-diagonal.b-diagonal_link .b-diagonal__link { //b-diagonal_link
   display: inline-block;
-} 
+}
 
 
 //fonts

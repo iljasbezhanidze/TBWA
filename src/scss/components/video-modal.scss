@@ -1,11 +1,21 @@
 .b-modal_video {
-    max-width: 80vw;
-    max-height: auto;
-    background-color: transparent;
-    padding: 0;
+  background-color: transparent;
+  padding: 25px;
+  width: 100%;
+  max-width: 1170px;
+
+  @media (max-width: 560px) {
+    padding: 10px;
+  }
 }
+
 .b-modal-overlay_video {
-    padding: 0;
-    z-index: 999999;
-    transform: translate3d(0, 0, 0);
+  padding: 0;
+  z-index: 999999;
+  transform: translate3d(0, 0, 0);
+}
+
+.b-modal__video-item {
+  object-fit: cover !important;
+  aspect-ratio: 1920/1080 !important;
 }
