@@ -110,6 +110,10 @@
   //height: calc(var(--burger) / 7.33);
   height: 6px;
   background-color: #000;
+
+  @media (max-width: 560px) {
+    height: 4px;
+  }
 }
 
 :root {

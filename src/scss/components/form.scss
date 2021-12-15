@@ -35,7 +35,6 @@
   outline: transparent;
   margin-bottom: 20px;
   font-size: 18px;
-  caret-color: #FECC00;
   width: 48.7%;
   max-height: 89px;
 
@@ -49,12 +48,6 @@
     border-bottom: 2px solid #FECC00;
     color: #000;
     opacity: 1;
-
-    &::placeholder {
-      font-weight: 700;
-      color: #000;
-      opacity: 1;
-    }
   }
 }
 

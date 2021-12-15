@@ -127,33 +127,33 @@ scrollBtn.addEventListener('click', backToTop);
 
 
 //------ LOAD VIDEO from link after click 'play' ---
-const videos = document.querySelectorAll('.b-video-article');
-let generateUrl = function (id) {
-  let query = '?rel=0&showinfo=0&autoplay=1';
-  return 'https://www.youtube.com/embed/' + id + query;
-};
-let createIframe = function (id) {
-  let iframe = document.createElement('iframe');
-  iframe.setAttribute('allowfullscreen', '');
-  iframe.setAttribute('allow', 'autoplay; encrypted-media');
-  iframe.setAttribute('src', generateUrl(id));
-  return iframe;
-};
-videos.forEach((el) => {
-  let videoHref = el.getAttribute('data-video');
-  let deletedLength = 'https://youtu.be/'.length;
-  let videoId = videoHref.substring(deletedLength, videoHref.length);
-  let img = el.querySelector('img');
-  let youtubeImgSrc = 'https://i.ytimg.com/vi/' + videoId + '/maxresdefault.jpg';
-  img.setAttribute('src', youtubeImgSrc);
-  el.addEventListener('click', (e) => {
-    e.preventDefault();
-    let iframe = createIframe(videoId);
-    el.querySelector('img').remove();
-    el.appendChild(iframe);
-    el.querySelector('button').remove();
-  });
-});
+// const videos = document.querySelectorAll('.b-video-article');
+// let generateUrl = function (id) {
+//   let query = '?rel=0&showinfo=0&autoplay=1';
+//   return 'https://www.youtube.com/embed/' + id + query;
+// };
+// let createIframe = function (id) {
+//   let iframe = document.createElement('iframe');
+//   iframe.setAttribute('allowfullscreen', '');
+//   iframe.setAttribute('allow', 'autoplay; encrypted-media');
+//   iframe.setAttribute('src', generateUrl(id));
+//   return iframe;
+// };
+// videos.forEach((el) => {
+//   let videoHref = el.getAttribute('data-video');
+//   let deletedLength = 'https://youtu.be/'.length;
+//   let videoId = videoHref.substring(deletedLength, videoHref.length);
+//   let img = el.querySelector('img');
+//   let youtubeImgSrc = 'https://i.ytimg.com/vi/' + videoId + '/maxresdefault.jpg';
+//   img.setAttribute('src', youtubeImgSrc);
+//   el.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     let iframe = createIframe(videoId);
+//     el.querySelector('img').remove();
+//     el.appendChild(iframe);
+//     el.querySelector('button').remove();
+//   });
+// });
 
 
 //---SLIDERS---
@@ -237,9 +237,10 @@ document.addEventListener('DOMContentLoaded', e => {
     constructor() {
       this.place = document.querySelector('.b-main__section_first-screen')
       if (!this.place) return false
-      this.titleElement = this.place.querySelector('.b-first-screen__title')
-      this.buttonElement = this.place.querySelector('.b-first-screen__button')
-      this.contactsSection = this.place.querySelector('.b-contacts-section')
+      this.parallaxItems = this.place.querySelectorAll('[data-parallax-items]')
+      // this.titleElement = this.place.querySelector('.b-first-screen__title')
+      // this.buttonElement = this.place.querySelector('.b-first-screen__button')
+      // this.contactsSection = this.place.querySelector('.b-contacts-section')
       this.image = this.place.querySelector('.b-media__item')
 
       this.init()
@@ -264,20 +265,20 @@ document.addEventListener('DOMContentLoaded', e => {
       if (percentShow >= 0/* && percentShow <= 100*/) {
 
         const offset = Math.round((percentShow * height) / 100 / 2)
-        if (this.titleElement) {
-          this.titleElement.style.transform = `translate3d(0, -${offset}px, 0)`
-          this.titleElement.style.opacity = (1 - (offset + 1) / (window.innerHeight / 2)).toString()
+        for (let i = 0; i < this.parallaxItems.length; i++) {
+          this.parallaxItems[i].style.transform = `translate3d(0, -${offset}px, 0)`
         }
-
-        if (this.buttonElement) {
-          this.buttonElement.style.transform = `translate3d(0, -${offset}px, 0)`
-          this.buttonElement.style.opacity = (1 - (offset + 1) / (window.innerHeight / 2)).toString()
-        }
-
-        if (this.contactsSection) {
-          this.contactsSection.style.transform = `translate3d(0, -${offset}px, 0)`
-          this.contactsSection.style.opacity = (1 - (offset + 1) / (window.innerHeight / 2)).toString()
-        }
+        // if (this.titleElement) {
+        //   this.titleElement.style.transform = `translate3d(0, -${offset}px, 0)`
+        // }
+        //
+        // if (this.buttonElement) {
+        //   this.buttonElement.style.transform = `translate3d(0, -${offset}px, 0)`
+        // }
+        //
+        // if (this.contactsSection) {
+        //   this.contactsSection.style.transform = `translate3d(0, -${offset}px, 0)`
+        // }
 
       }
     }
@@ -480,9 +481,43 @@ document.addEventListener('DOMContentLoaded', e => {
       this.lastScrollY = currentScrollY
     }
   }
+  class VideoPlayer {
+    constructor(place) {
+      if (!place) return false
+      this.place = place
+      this.trigger = this.place.querySelector('.b-video-block__preview')
+      this.frame = this.place.querySelector('.b-video-block__frame iframe')
+
+      this.init()
+    }
+
+    init() {
+      this.listener()
+    }
+
+    listener() {
+      this.trigger.addEventListener('click', e => {
+        this.clickHandle()
+      })
+    }
+
+    clickHandle() {
+      this.trigger.style.opacity = '0'
+
+      setTimeout(() => {
+        this.trigger.style.display = 'none'
+        this.frame.setAttribute('src', this.frame.getAttribute('src') + '?autoplay=1')
+      }, 300)
+    }
+  }
 
   new HomeCoverParallax()
   new ShowHideOtherSite()
   new ImagesScrollScale()
   new Header()
+
+  const allVideoBlockOnThePage = document.querySelectorAll('[data-video-block]')
+  for (let i = 0; i < allVideoBlockOnThePage.length; i++) {
+    new VideoPlayer(allVideoBlockOnThePage[i])
+  }
 })

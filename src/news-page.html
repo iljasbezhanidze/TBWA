@@ -12,6 +12,7 @@
   rel="stylesheet"
   href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
 />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -34,9 +35,9 @@
               <img class="b-media__item" src="./img/first-screen.jpg" alt="media">
             </div>
             <div class="b-first-screen__inner">
-              <h1 class="b-main-title b-first-screen__title">Pirates in the news.</h1>
-              <span class="b-first-screen__subtitle">— Steve Jobs</span>
-              <a class="b-btn b-first-screen__button" href="#"><span class="b-btn__text">Watch</span></a>
+              <h1 class="b-main-title b-first-screen__title" data-parallax-items>Pirates in the news.</h1>
+              <span class="b-first-screen__subtitle" data-parallax-items>— Steve Jobs</span>
+              <a class="b-btn b-first-screen__button" href="#" data-parallax-items><span class="b-btn__text">Watch</span></a>
             </div>
           </div>
         </div>
@@ -174,6 +175,8 @@
       <div class="b-page__container-footer">@include('partials/footer.html')</div>
     </div>
   </main>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
