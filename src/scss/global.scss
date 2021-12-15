@@ -91,7 +91,7 @@ body {
   background-color: #ffffff;
   z-index: 10;
   transform-origin: bottom left;
-  transition: all ease 0.5s;
+  transition: transform ease 0.5s;
 
   &:after {
     content: '';
@@ -114,7 +114,7 @@ body {
   position: relative;
   z-index: 15;
   //margin-top: 185vh;
-  margin-top: 100vh;
+  margin-top: 120vh;
 }
 
 .b-main__section_bg-grey {
@@ -135,12 +135,18 @@ body {
 }
 
 .b-main__section_first-screen {
+  padding: 0 !important;
+  height: 100vh;
+}
+
+.b-main__section_first-screen-fixed {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  height: 100vh;
-  padding: 0 !important;
+}
+
+.b-main__section_first-screen-other {
 }
 
 .b-main__section_mb-none {

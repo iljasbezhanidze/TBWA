@@ -50,11 +50,16 @@
   width: 100%;
   object-fit: cover;
   height: 100vh;
-  margin-top: 10px;
 
   @media(max-width:660px) {
     object-fit: cover;
     height: 100vh;
+  }
+}
+video.b-media__item {
+  margin-top: 10px;
+
+  @media(max-width:660px) {
     margin-top: 0;
   }
 }

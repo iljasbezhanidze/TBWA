@@ -25,7 +25,9 @@
       </div>
     </div>
     <div class="b-main b-page__main">
-      <section class="b-main__section b-main__section_pad-none">
+      <div class="b-main__skew-block"></div>
+      <div class="b-main__first">
+        <section class="b-main__section b-main__section_first-screen b-main__section_first-screen-fixed b-main__section_pad-none">
         <div class="b-main__container b-main__container_full-screen">
           <div class="b-first-screen b-first-screen_title">
             <div class="b-media b-first-screen__media">
@@ -39,7 +41,9 @@
           </div>
         </div>
       </section>
-      <section class="b-main__section">
+      </div>
+      <div class="b-main__other">
+        <section class="b-main__section">
         <div class="b-main__container">
           <article class="b-article b-article_news">
             <a href="article.html" class="b-article__inner-img">
@@ -164,6 +168,7 @@
           </div>
         </div>
       </section>
+      </div>
     </div>
     <div class="b-page__footer">
       <div class="b-page__container-footer">@include('partials/footer.html')</div>

@@ -199,8 +199,7 @@ var swiperArticle = new Swiper(".mySwiperArticle", {
 try {
   let mySwiper = null
 
-  //init & destroy slider (different size pictures) depending on viewport width
-  window.addEventListener('resize', e => {
+  const initTeamSlider = () => {
     if (window.innerWidth < 800) {
       mySwiper = new Swiper(".mySwiper_team", {
         observer: true,
@@ -224,7 +223,12 @@ try {
         mySwiper = undefined
       }
     }
+  }
+  //init & destroy slider (different size pictures) depending on viewport width
+  window.addEventListener('resize', e => {
+    initTeamSlider()
   })
+  initTeamSlider()
 } catch {
 }
 
@@ -235,6 +239,7 @@ document.addEventListener('DOMContentLoaded', e => {
       if (!this.place) return false
       this.titleElement = this.place.querySelector('.b-first-screen__title')
       this.buttonElement = this.place.querySelector('.b-first-screen__button')
+      this.contactsSection = this.place.querySelector('.b-contacts-section')
       this.image = this.place.querySelector('.b-media__item')
 
       this.init()
@@ -259,11 +264,21 @@ document.addEventListener('DOMContentLoaded', e => {
       if (percentShow >= 0/* && percentShow <= 100*/) {
 
         const offset = Math.round((percentShow * height) / 100 / 2)
-        this.titleElement.style.transform = `translate3d(0, -${offset}px, 0)`
-        this.buttonElement.style.transform = `translate3d(0, -${offset}px, 0)`
-        // this.image.style.transform = `translate3d(0, ${offset / 2}px, 0)`
+        if (this.titleElement) {
+          this.titleElement.style.transform = `translate3d(0, -${offset}px, 0)`
+          this.titleElement.style.opacity = (1 - (offset + 1) / (window.innerHeight / 2)).toString()
+        }
 
-        // this.place.style.transform = `translate3d(0, ${placeOffsetTop / 1.33}px, 0)`
+        if (this.buttonElement) {
+          this.buttonElement.style.transform = `translate3d(0, -${offset}px, 0)`
+          this.buttonElement.style.opacity = (1 - (offset + 1) / (window.innerHeight / 2)).toString()
+        }
+
+        if (this.contactsSection) {
+          this.contactsSection.style.transform = `translate3d(0, -${offset}px, 0)`
+          this.contactsSection.style.opacity = (1 - (offset + 1) / (window.innerHeight / 2)).toString()
+        }
+
       }
     }
   }
@@ -297,7 +312,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
     scrollHandle() {
       this.showHide()
-
+      this.toggleBackgroundColor()
       // let offset = Math.round(window.scrollY / window.innerHeight * 100)
       // offset = offset >= 100 ? 100 : offset
       // this.skewBlock.style.transform = `translate3d(calc(${offset - 100}vw - ${this.offset - (offset / 100 * this.offset)}vh), 0, 0)`
@@ -311,6 +326,16 @@ document.addEventListener('DOMContentLoaded', e => {
       } else {
         this.skewBlock.style.transform = `translate3d(calc(-100vw - 38vh), 0, 0)`
         this.other.style.transform = `translate3d(-100vw, 0, 0)`
+      }
+    }
+
+    toggleBackgroundColor() {
+      if (this.skewBlock.classList.value.includes('b-main__skew-block_bgc-gray')) {
+        if (window.scrollY > (window.innerHeight * 2)) {
+          this.skewBlock.style.backgroundColor = ''
+        } else {
+          this.skewBlock.style.backgroundColor = '#f2f2f2'
+        }
       }
     }
   }
@@ -362,6 +387,18 @@ document.addEventListener('DOMContentLoaded', e => {
       //   }
       // }
 
+      if (window.innerWidth < 960) {
+        for (let i = 0; i < this.secondImages.length; i++) {
+          const image = this.secondImages[i]
+          image.style.transform = `scale(1) translate3d(0, 0, 0)`
+        }
+
+        for (let i = 0; i < this.firstImages.length; i++) {
+          const image = this.firstImages[i]
+          image.style.transform = `scale(1)`
+        }
+        return false
+      }
       for (let i = 0; i < this.secondImages.length; i++) {
         const image = this.secondImages[i]
         const imagePosOpts = image.getBoundingClientRect()
