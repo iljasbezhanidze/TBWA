@@ -24,6 +24,26 @@
   padding-right: 120px;
 }
 
+.b-awwards_pb {
+  padding-bottom: 80px;
+
+  @media (max-width: 1460px) {
+    padding-bottom: 120px;
+  }
+
+  @media (max-width: 1170px) {
+    padding-bottom: 160px;
+  }
+
+  @media (max-width: 640px) {
+    padding-bottom: 200px;
+  }
+
+  @media (max-width: 490px) {
+    padding-bottom: 160px;
+  }
+}
+
 .b-awwards__title {
   margin-bottom: 60px;
 }

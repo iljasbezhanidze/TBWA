@@ -8,11 +8,19 @@
   justify-content: space-between;
   margin-bottom: 80px;
 
+
+  @media (max-width: 560px) {
+    flex-direction: column;
+  }
 }
 
 .b-blog-slider__wrapper {}
 
-.b-blog-slider__title {}
+.b-blog-slider__title {
+  @media (max-width: 560px) {
+    text-align: center;
+  }
+}
 
 .b-blog-slider__slider-btns {
   display: flex;

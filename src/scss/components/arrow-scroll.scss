@@ -3,8 +3,8 @@
     display: none;
     justify-content: center;
     align-items: center;
-    bottom: 40px;
-    right: 40px;
+    bottom: 20px;
+    right: 20px;
     width: 40px;
     height: 40px;
     background-color: #FECC00;
@@ -12,7 +12,7 @@
     opacity: 1;
     transition: all .5s;
     z-index: 9999;
-    
+
     .b-show.b-lighten {
         transition: all .5s;
         opacity: 0;
