@@ -17,7 +17,9 @@
 }
 
 .b-media.b-first-screen__media {}
-
+.b-first-screen__media {
+  height: 100%;
+}
 .b-first-screen__inner {
   position: absolute;
   top: 50%;

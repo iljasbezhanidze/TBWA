@@ -17,6 +17,13 @@
       opacity: .75;
     }
   }
+  &:not(:last-child) {
+    margin-bottom: 40px;
+
+    @media(max-width:900px) {
+      margin-bottom: 28px;
+    }
+  }
 }
 
 .b-main__pagination {

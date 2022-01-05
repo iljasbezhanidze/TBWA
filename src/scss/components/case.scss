@@ -8,6 +8,7 @@
     min-width: 58%;
   }
 }
+
 .b-share {
   display: flex;
   flex-direction: column;
@@ -74,14 +75,10 @@
 }
 
 
-@media(max-width:1250px){
-  .b-media__item_case {
-    object-fit: cover;
-    height: 85vh;
-  }
+@media(max-width: 1250px) {
 }
 
-@media(max-width:1156px) {
+@media(max-width: 1156px) {
 
   .b-images_negative-margin {
     margin-top: -200px;
@@ -104,7 +101,7 @@
 
 }
 
-@media(max-width:952px) {
+@media(max-width: 952px) {
 
   .b-awards__items {
     flex-wrap: wrap;
@@ -122,7 +119,7 @@
   }
 }
 
-@media(max-width:640px) {
+@media(max-width: 640px) {
 
   .b-slider__nav {
     padding-top: 0;
@@ -142,13 +139,7 @@
 }
 
 
-@media(max-width:660px) {
-  .b-media__item_case {
-    height: 100vh;
-  }
-}
-
-@media(max-width:440px) {
+@media(max-width: 440px) {
   .b-awards__item {
     flex: 1 1 100%;
     flex-direction: row;

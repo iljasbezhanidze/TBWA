@@ -91,7 +91,7 @@ body {
   background-color: #ffffff;
   z-index: 10;
   transform-origin: bottom left;
-  transition: transform ease 0.5s;
+  transition: transform linear 0.75s;
 
   &:after {
     content: '';
@@ -102,15 +102,22 @@ body {
     border-width: 100vh 0 0 38vh;
     border-color: transparent transparent transparent #ffffff;
   }
+
+  &_bgc-gray {
+    &:after {
+      border-color: transparent transparent transparent rgb(242, 242, 242);
+
+    }
+  }
 }
 
 .b-main__first {
-  transition: all ease 0.5s;
+  transition: all linear 0.75s;
   z-index: 5;
 }
 
 .b-main__other {
-  transition: all ease 0.5s;
+  transition: all linear 0.75s;
   position: relative;
   z-index: 15;
   //margin-top: 185vh;
@@ -132,6 +139,10 @@ body {
 
   &_full-height {
     min-height: 100vh;
+
+    @media (max-width: 1024px) {
+      min-height: 50vh;
+    }
   }
   //z-index: 2;
   //position: relative;
@@ -217,6 +228,7 @@ body {
 .b-main__container {
   max-width: var(--width-container);
   flex-grow: 1;
+  height: 100%;
 }
 
 .b-projects__container_large,
@@ -377,30 +389,38 @@ body {
 
 .b-btn {
   padding: 19px 80px;
-  background-color: #000;
+  background-color: transparent;
   color: #fff;
-  clip-path: polygon(0% 0%, 87% 0%, 100% 100%, 13% 100%);
   white-space: nowrap;
   text-align: center;
-  overflow: hidden;
   position: relative;
+  border: none;
+  display: inline-flex;
 
-  &::before {
+  &:after {
     content: '';
     position: absolute;
-    transition: all .15s linear;
+    top: 0;
     left: 0;
+    right: 0;
     bottom: 0;
+    background: linear-gradient(to bottom, #000 0%, #000 50%, #FECC00 50%, #FECC00 100%) 0 0;
+    background-size: 100% 200%;
     width: 100%;
-    height: 0;
-    background-color: #FECC00;
-    top: 102%;
+    height: 100%;
+    z-index: 1;
+    transform: skew(20deg);
+    transition: all ease-in-out 0.5s;
+  }
 
+  &:hover {
+    &:after {
+      background-position: 0 100%;
+    }
   }
 
   &:hover::before {
     top: 0;
-    height: 100%;
   }
 
   &:hover .b-btn__text {
@@ -413,28 +433,31 @@ body {
   }
 }
 
+.b-btn__text {
+  z-index: 3;
+  position: relative;
+}
+
 .b-btn_yellow {
-  background-color: #FECC00;
   color: #000;
   white-space: nowrap;
   flex-grow: 0;
   position: relative;
 
-  &::before {
+  &:after {
     content: '';
     position: absolute;
-    transition: all 0.15s linear;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 0;
-    background-color: #000;
-    top: 102%;
-  }
-
-  &:hover::before {
     top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, #FECC00 0%, #FECC00 50%, #000 50%, #000 100%) 0 0;
+    background-size: 100% 200%;
+    width: 100%;
     height: 100%;
+    z-index: 1;
+    transform: skew(21deg);
+    transition: all ease-in-out 0.5s;
   }
 
   &:hover .b-btn__text {
@@ -443,28 +466,25 @@ body {
 }
 
 .b-btn_white {
-  padding: 28px 87px;
-  background-color: #fff;
   color: #000;
   white-space: nowrap;
   font-weight: 700;
   position: relative;
 
-  &::before {
+  &:after {
     content: '';
     position: absolute;
-    transition: all 0.15s linear;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 0;
-    background-color: #000;
-    top: 102%;
-  }
-
-  &:hover::before {
     top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, #fff 0%, #fff 50%, #FECC00 50%, #FECC00 100%) 0 0;
+    background-size: 100% 200%;
+    width: 100%;
     height: 100%;
+    z-index: 1;
+    transform: skew(21deg);
+    transition: all ease-in-out 0.5s;
   }
 
   &:hover .b-btn__text {
@@ -474,28 +494,23 @@ body {
 
 .b-btn_black {
   padding: 19px 80px;
-  background-color: #000;
   color: #fff;
   font-weight: 700;
   position: relative;
-
-
-  &::before {
+  &:after {
     content: '';
     position: absolute;
-    transition: all 0.15s linear;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 0;
-    background-color: #fff;
-    top: 102%;
-  }
-
-  &:hover::before {
-    color: #000;
     top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, #000 0%, #000 50%, #FECC00 50%, #FECC00 100%) 0 0;
+    background-size: 100% 200%;
+    width: 100%;
     height: 100%;
+    z-index: 1;
+    transform: skew(21deg);
+    transition: all ease-in-out 0.5s;
   }
 
   &:hover .b-btn__text {

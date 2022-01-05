@@ -107,12 +107,15 @@
   overflow: hidden;
   height: var(--sliderHeight);
   width: var(--slideiwidth);
-  margin-bottom: 40px;
 
   &:hover {
     & .b-article__picture {
       transform: scale(1.05);
     }
+  }
+
+  @media (max-width: 800px) {
+    margin-bottom: 20px;
   }
 }
 
@@ -177,9 +180,6 @@
     font-size: 14px;
   }
 
-  .b-article__inner-img {
-    margin-bottom: 24px;
-  }
 
   .swiper-button-next:after,
   .swiper-button-prev:after {

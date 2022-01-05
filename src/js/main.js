@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', e => {
         this.other.style.transform = `translate3d(0, 0, 0)`
       } else {
         this.skewBlock.style.transform = `translate3d(calc(-100vw - 38vh), 0, 0)`
-        this.other.style.transform = `translate3d(-100vw, 0, 0)`
+        this.other.style.transform = `translate3d(-200vw, 0, 0)`
       }
     }
 
@@ -435,7 +435,7 @@ document.addEventListener('DOMContentLoaded', e => {
         if (bottomPartOffsetToTop > 0 && bottomPartOffsetToTop < movingHeight) {
           const posOnTheLine = Math.abs((bottomPartOffsetToTop / movingHeight) - 1)
           const percentPosOnTheLine = /*Math.round(*/posOnTheLine * 100/*)*/
-          const currentPos = percentPosOnTheLine > 50 ? (100 - percentPosOnTheLine) : percentPosOnTheLine
+          const currentPos = percentPosOnTheLine > 50 ? /*(100 - percentPosOnTheLine)*/50 : percentPosOnTheLine
           const scale = (50 - currentPos) / 100 + 1
           image.style.transform = `scale(${scale})`
         }
