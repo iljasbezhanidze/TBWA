@@ -1,7 +1,7 @@
 .b-contacts-section {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: baseline;
   column-gap: 40px;
 }
 
@@ -122,7 +122,7 @@
   .b-contacts-section_page .b-contacts-block__item {
     max-width: 192px;
   }
-  
+
   .b-contacts-section_page .b-contacts-block__item a {
     line-height: 1.2;
     font-size: 18px;
@@ -172,5 +172,5 @@
   .b-contacts-block__item:last-child .b-contacts-block__item-title:not(.b-contacts-section_page .b-contacts-block__item) {
       margin-bottom: 25px;
   }
-  
+
 }
