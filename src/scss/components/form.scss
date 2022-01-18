@@ -75,6 +75,7 @@
 .b-form__agrement-box {
   flex: 2 0 100%;
   margin-bottom: 35px;
+  display: flex;
 }
 
 .b-form__agrement {
@@ -91,6 +92,7 @@
   opacity: 1;
   transition: all .3s;
   position: relative;
+  padding-left: 5px;
 
   &::after {
     content: '';
