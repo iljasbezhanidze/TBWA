@@ -107,6 +107,7 @@
   overflow: hidden;
   height: var(--sliderHeight);
   width: var(--slideiwidth);
+  margin-bottom: 40px;
 
   &:hover {
     & .b-article__picture {
