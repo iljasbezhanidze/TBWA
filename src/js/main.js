@@ -5,7 +5,7 @@ const burgerButton = document.querySelector('.b-burger')
 const header = document.querySelector('.b-header')
 const modalOpen = document.querySelectorAll('[data-modal-open]')
 const modals = document.querySelectorAll('[data-modal]')
-const moadalInner = document.querySelectorAll('.b-modal')
+const modalInner = document.querySelectorAll('.b-modal')
 const closeModal = document.querySelectorAll('[data-modal-close]')
 const forms = document.querySelectorAll('.b-form')
 const scrollBtn = document.querySelector('.b-arrow-scroll')
@@ -57,7 +57,7 @@ function hideModals() {
   modals.forEach(elem => {
     elem.classList.remove('b-show');
   });
-};
+}
 
 //find & open current modal, close rest & block scroll
 modalOpen.forEach(elem => {
@@ -76,6 +76,13 @@ modalOpen.forEach(elem => {
   });
 });
 
+window.openModalByName = name => {
+  hideModals()
+  document.body.classList.add('b-blockScroll')
+  const currentModal = document.querySelector(`[data-modal="${name}"]`)
+  currentModal.classList.add('b-show')
+}
+
 //close btn active
 closeModal.forEach(el => el.onclick = () => {
   hideModals();
@@ -85,14 +92,13 @@ closeModal.forEach(el => el.onclick = () => {
 //close to click overlay
 window.addEventListener('click', function (e) {
   modals.forEach(el => {
-    if (el == e.target && e.target != moadalInner) {
+    if (el == e.target && e.target != modalInner) {
       document.body.classList.remove('b-blockScroll')
       hideModals();
       closeVideo();
     }
-    ;
-  });
-});
+  })
+})
 
 function closeVideo() {
   currentPlayVideo.forEach(el => {
@@ -481,6 +487,7 @@ document.addEventListener('DOMContentLoaded', e => {
       this.lastScrollY = currentScrollY
     }
   }
+
   class VideoPlayer {
     constructor(place) {
       if (!place) return false
