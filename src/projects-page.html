@@ -15,86 +15,60 @@
 </head>
 
 <body>
-@include('partials/arrow-scroll.html')
-  <main class="b-page">
-    <div class="b-page__header">
-      <div class="b-page__container-header">
-        @include('partials/header.html')
-      </div>
+<main class="b-page">
+  <div class="b-page__header">
+    <div class="b-page__container-header">
+      @include('partials/header.html')
     </div>
-    <div class="b-main b-page__main">
-      <div class="b-main__skew-block"></div>
-      <div class="b-main__first">
-        <section class="b-main__section b-main__section_first-screen b-main__section_first-screen-fixed b-main__section_pad-none">
-          <div class="b-main__container b-main__container_full-screen">
-            <div class="b-first-screen b-first-screen_title b-first-screen_btn">
-              <div class="b-media b-first-screen__media">
-                <img class="b-media__item" src="./img/first-screen.jpg" alt="media">
-              </div>
-              <div class="b-first-screen__inner">
-                <h1 class="b-main-title b-first-screen__title" data-parallax-items>We hate boring</h1>
-                <span class="b-first-screen__subtitle" data-parallax-items>— Steve Jobs</span>
-                <a class="b-btn b-first-screen__button" href="#" data-parallax-items><span class="b-btn__text">Watch</span></a>
-              </div>
+  </div>
+  <div class="b-main b-page__main">
+    <div class="b-main__skew-block"></div>
+    <div class="b-main__first">
+      <section class="b-main__section b-main__section_first-screen b-main__section_first-screen-fixed b-main__section_pad-none">
+        <div class="b-main__container b-main__container_full-screen">
+          <div class="b-first-screen b-first-screen_title b-first-screen_btn">
+            <div class="b-media b-first-screen__media">
+              <img class="b-media__item" src="./img/first-screen.jpg" alt="media">
+            </div>
+            <div class="b-first-screen__inner">
+              <h1 class="b-main-title b-first-screen__title" data-parallax-items>We hate boring</h1>
+              <span class="b-first-screen__subtitle" data-parallax-items>— Steve Jobs</span>
+              <a class="b-btn b-first-screen__button" href="#" data-parallax-items><span class="b-btn__text">Watch</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="b-main__other">
+      <div class="b-projects b-projects_desc b-main__part">
+        <section class="b-projects__section b-projects__section_pad-none">
+          <div class="b-projects__container b-projects__container_large">
+            <div class="b-projects__container">
+              @include('partials/image-imposition.html')
             </div>
           </div>
         </section>
-      </div>
-      <div class="b-main__other">
-        <div class="b-projects b-projects_desc b-main__part">
-          <section class="b-projects__section b-projects__section_pad-none">
-            <div class="b-projects__container b-projects__container_large">
-              <div class="b-projects__container">
-                @include('partials/image-imposition.html')
-              </div>
+        <section class="b-projects__section b-projects__section_pad-none">
+          <div class="b-projects__container b-projects__container_large">
+            <div class="b-projects__container">
+              @include('partials/image-imposition2.html')
             </div>
-          </section>
-          <section class="b-projects__section b-projects__section_pad-none">
-            <div class="b-projects__container b-projects__container_large">
-              <div class="b-projects__container">
-                @include('partials/image-imposition2.html')
-              </div>
+          </div>
+        </section>
+        <section class="b-projects__section b-projects__section_pad-none">
+          <div class="b-projects__container b-projects__container_large">
+            <div class="b-projects__container">
+              @include('partials/image-imposition3.html')
             </div>
-          </section>
-          <section class="b-projects__section b-projects__section_pad-none">
-            <div class="b-projects__container b-projects__container_large">
-              <div class="b-projects__container">
-                @include('partials/image-imposition3.html')
-              </div>
-            </div>
-          </section>
-          <section class="b-projects__section b-projects__section_pad-none">
-            <div class="b-projects__container b-projects__container_large">
-              <div class="b-projects__container">
-                <div class="b-imposition  b-imposition_desc">
-                  <div class="b-imposition__wrapper">
-                    <div class="b-imposition__img-inner b-imposition__img-inner_main">
-                      <img class="b-imposition__main-img " src="./img/project1.jpg" alt="img">
-                    </div>
-                    <div class="b-imposition__inner">
-                      <h2 class="b-imposition__title b-title"><a class="b-imposition__title-link" href="case.html">McDrive order for 45 seconds!</a></h2>
-                      <div class="b-imposition__description">
-                        McDonald's has challenged all of us: it has pledged to collect orders for McDrive in 45 seconds!
-                        And if his team does not cope with the speed - will add McNuggets as a gift. Ambitious? 😏
-                      </div>
-                      <a class="b-imposition__btn-link" href="case.html">
-                        <span class="b-imposition__arrow-icon"></span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="b-imposition__img-inner b-imposition__img-inner_second">
-                    <img class="b-imposition__second-img " src="./img/project2.jpg" alt="img">
-                  </div>
-                </div>
-
-                <div class="b-imposition  b-imposition_mob">
-                  <div class="b-imposition__wrapper">
-                    <div class="b-imposition__img-inner b-imposition__img-inner_main">
-                      <img class="b-imposition__main-img " src="./img/project1.jpg" alt="img">
-                    </div>
-                    <div class="b-imposition__img-inner b-imposition__img-inner_second">
-                      <img class="b-imposition__second-img " src="./img/project2.jpg" alt="img">
-                    </div>
+          </div>
+        </section>
+        <section class="b-projects__section b-projects__section_pad-none">
+          <div class="b-projects__container b-projects__container_large">
+            <div class="b-projects__container">
+              <div class="b-imposition  b-imposition_desc">
+                <div class="b-imposition__wrapper">
+                  <div class="b-imposition__img-inner b-imposition__img-inner_main">
+                    <img class="b-imposition__main-img " src="./img/project1.jpg" alt="img">
                   </div>
                   <div class="b-imposition__inner">
                     <h2 class="b-imposition__title b-title"><a class="b-imposition__title-link" href="case.html">McDrive order for 45 seconds!</a></h2>
@@ -107,21 +81,47 @@
                     </a>
                   </div>
                 </div>
-
+                <div class="b-imposition__img-inner b-imposition__img-inner_second">
+                  <img class="b-imposition__second-img " src="./img/project2.jpg" alt="img">
+                </div>
               </div>
+
+              <div class="b-imposition  b-imposition_mob">
+                <div class="b-imposition__wrapper">
+                  <div class="b-imposition__img-inner b-imposition__img-inner_main">
+                    <img class="b-imposition__main-img " src="./img/project1.jpg" alt="img">
+                  </div>
+                  <div class="b-imposition__img-inner b-imposition__img-inner_second">
+                    <img class="b-imposition__second-img " src="./img/project2.jpg" alt="img">
+                  </div>
+                </div>
+                <div class="b-imposition__inner">
+                  <h2 class="b-imposition__title b-title"><a class="b-imposition__title-link" href="case.html">McDrive order for 45 seconds!</a></h2>
+                  <div class="b-imposition__description">
+                    McDonald's has challenged all of us: it has pledged to collect orders for McDrive in 45 seconds!
+                    And if his team does not cope with the speed - will add McNuggets as a gift. Ambitious? 😏
+                  </div>
+                  <a class="b-imposition__btn-link" href="case.html">
+                    <span class="b-imposition__arrow-icon"></span>
+                  </a>
+                </div>
+              </div>
+
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
     </div>
-    <div class="b-page__footer">
-      <div class="b-page__container-footer">@include('partials/footer.html')</div>
-    </div>
-  </main>
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-  <script src="js/main.js"></script>
+  </div>
+  <div class="b-page__footer">
+    <div class="b-page__container-footer">@include('partials/footer.html')</div>
+  </div>
+</main>
+@include('partials/arrow-scroll.html')
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 
 </html>
