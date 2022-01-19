@@ -83,7 +83,7 @@ const scriptsBackend = () => {
     .pipe(concat('vendor.js'))
     .pipe(gulpif(isProd, uglify().on("error", notify.onError())))
 		.pipe(dest('./app/js/'))
-	return src(['./src/js/functions/**.js', './src/js/components/**.js', './src/js/main.js'])
+	return src(['./src/js/main.js'])
     .pipe(dest('./app/js'))
 };
 
