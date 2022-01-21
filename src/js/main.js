@@ -161,19 +161,74 @@ scrollBtn.addEventListener('click', backToTop);
 //   });
 // });
 
+class ArticleSliceSlider {
+  constructor(name) {
+    if (!name) return false
+    this.container = document.querySelector(`[data-slick-slider="${name}"]`)
+    this.prev = this.container.querySelector('[data-slick-arrow-prev]')
+    this.next = this.container.querySelector('[data-slick-arrow-next]')
+    this.list = this.container.querySelector('[data-slick-arrow-list]')
+
+    this.init()
+  }
+
+  init() {
+    $(this.list).slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      prevArrow: this.prev,
+      nextArrow: this.next,
+      responsive: [
+        {
+          breakpoint: 1280,
+          settings: {
+            slidesToShow: 2,
+          }
+        },
+        {
+          breakpoint: 960,
+          settings: {
+            slidesToShow: 1,
+          }
+        },
+      ]
+    })
+  }
+}
+
+document.addEventListener('DOMContentLoaded', e => {
+  const allSlickSlidersOnPage = document.querySelectorAll('[data-slick-slider]')
+  for (let i = 0; i < allSlickSlidersOnPage.length; i++) {
+    const name = allSlickSlidersOnPage[i].getAttribute('data-slick-slider')
+    new ArticleSliceSlider(name)
+  }
+})
 
 //---SLIDERS---
 //init slider (width articles)
 var swiperBlog = new Swiper(".mySwiperBlog", {
   observer: true,
   observeParents: true,
-  slidesPerView: 'auto',
+  slidesPerView: 1,
   spaceBetween: 20,
   loop: true,
   breakpoints: {
-    800: {
-      spaceBetween: 40,
+    1280: {
+      slidesPerView: 3,
+      spaceBetween: 30,
     },
+    1170: {
+      slidesPerView: 3,
+    },
+    960: {
+      spaceBetween: 40,
+      slidesPerView: 2,
+    },
+    780: {
+      spaceBetween: 0,
+      slidesPerView: 1,
+    }
   },
   navigation: {
     nextEl: ".swiper-button-next",

@@ -33,13 +33,9 @@
 @import "./components/video-modal";
 @import "./components/slider-swiper-article";
 @import "./components/video-block";
+@import "./components/article-content";
+@import "./components/slick-slider";
 
-//disabled element in blocks
-.b-diagonal__link,
-.b-diagonal__btn {
-  display: none;
-}
-//enabled element
 
 .b-diagonal.b-diagonal_btn .b-diagonal__btn,  //b-diagonal_btn
 .b-first-screen.b-first-screen_subtitle .b-first-screen__subtitle,  //b-first-screen_subtitle

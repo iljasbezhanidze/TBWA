@@ -51,8 +51,10 @@
 
 .b-awards__items {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   column-gap: 60px;
+  row-gap: 60px;
 }
 
 .b-award {
@@ -174,5 +176,8 @@
 
 .b-case__company-name {
   margin-bottom: 40px;
-  color: #fff;
+}
+
+.b-case__company-name_white {
+  color: #ffffff;
 }

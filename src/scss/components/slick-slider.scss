@@ -1,0 +1,17 @@
+.b-slick-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.b-slick-slider__list {
+  width: calc(100% + 40px);
+  margin: 0 -20px;
+
+  & .slick-track {
+    min-width: 100% !important;
+
+    & .slick-slide {
+      padding: 0 20px !important;
+    }
+  }
+}
