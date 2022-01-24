@@ -1,0 +1,31 @@
+.b-order-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: -10px;
+}
+
+.b-order-form__item {
+  margin: 10px;
+  width: calc(50% - 20px);
+}
+
+.b-order-form__item_full {
+  width: 100%;
+}
+
+.b-order-form__agree {
+  padding: 20px 0;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 18px;
+  line-height: 1.6;
+
+  & a {
+    color: #FECC00;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

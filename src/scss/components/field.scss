@@ -1,0 +1,43 @@
+.b-field {
+  width: 100%;
+  display: block;
+}
+
+.b-field__input {
+  width: 100%;
+  background-color: #F2F2F2;
+  transition: all .2s;
+  padding: 30px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  outline: transparent;
+  font-size: 18px;
+  max-height: 89px;
+  margin: 0 !important;
+  display: block;
+  font-weight: 700;
+  color: black;
+
+  &:focus {
+    border-bottom: 2px solid #FECC00;
+    color: #000;
+    opacity: 1;
+
+    &::placeholder {
+      font-weight: 700;
+      color: black;
+    }
+  }
+
+  &::placeholder {
+    color: rgba(black, 0.4);
+    font-weight: 400;
+  }
+}
+
+textarea.b-field__input {
+  max-height: 240px;
+  min-height: 120px;
+  resize: vertical;
+}

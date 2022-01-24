@@ -1,23 +1,42 @@
 <div class="b-contact-form">
   <h2 class="b-contact-form__title b-title">Contact Us</h2>
   <div class="b-contact-form__wrapper">
-    <form class="b-form">
-      <div class="b-form__box">
-        <input class="b-form__input b-form__input_name" name="Name" placeholder="Name*" required type="text">
-        <input class="b-form__input b-form__input_email" name="E-mail" placeholder="E-mail*" required type="text">
+    <form class="b-order-form">
+      <div class="b-order-form__item">
+        <div class="b-field">
+          <input type="text" class="b-field__input" placeholder="Name*">
+        </div>
       </div>
-      <div class="b-form__box">
-        <input class="b-form__input b-form__input_phone" name="Phone" placeholder="Phone" type="number">
-        <input class="b-form__input b-form__input_company" name="Company Name" placeholder="Company name" type="text">
+      <div class="b-order-form__item">
+        <div class="b-field">
+          <input type="text" class="b-field__input" placeholder="E-mail*">
+        </div>
       </div>
-      <textarea class="b-form__textfield" placeholder="Message..." name="Message" id=""></textarea>
-      <div class="b-form__agrement-box">
-        <div class="b-form__agrement">By using this form you agree to the processing of</div>
-        <a class="b-form__agrement-link" href="#" data-modal-open="personal-data">
-          personal data
-        </a>
+      <div class="b-order-form__item">
+        <div class="b-field">
+          <input type="text" class="b-field__input" placeholder="Phone">
+        </div>
       </div>
-      <button class="b-form__submit b-btn b-btn_yellow" type="submit" data-modal-open="feedback"><span class="b-btn__text">Send</span></button>
+      <div class="b-order-form__item">
+        <div class="b-field">
+          <input type="text" class="b-field__input" placeholder="Company name">
+        </div>
+      </div>
+      <div class="b-order-form__item b-order-form__item_full">
+        <div class="b-field">
+          <textarea class="b-field__input" placeholder="Message..."></textarea>
+        </div>
+      </div>
+      <div class="b-order-form__item b-order-form__item_full">
+        <div class="b-order-form__agree">
+          By using this form you agree to the processing of <a href="#">personal data</a>
+        </div>
+      </div>
+      <div class="b-order-form__item b-order-form__item_full">
+        <button type="submit" class="b-form__submit b-btn b-btn_yellow" data-modal-open="feedback">
+          <span class="b-btn__text">Send</span>
+        </button>
+      </div>
     </form>
   </div>
 </div>
