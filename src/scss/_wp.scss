@@ -1,0 +1,35 @@
+/*img*/
+img.alignright { float: right; margin: 0 0 1em 1em; }
+img.alignleft { float: left; margin: 0 1em 1em 0; }
+img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
+/*Contact form 7*/
+.wpcf7 form.wpcf7-response-output-sent-hidden.sent .wpcf7-response-output {
+  display: none;
+}
+
+.wpcf7-not-valid-tip {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.wpcf7 form .wpcf7-response-output {
+  padding: 20px 10px;
+  margin: 40px 10px;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 18px;
+  line-height: 1.6;
+  width: 100%;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
+  border-color: #FECC00;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+  display: none;
+}
