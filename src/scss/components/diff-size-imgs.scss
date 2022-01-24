@@ -14,9 +14,15 @@
 
 .b-person {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 80px;
+  justify-content: space-between;
   align-items: center;
-  column-gap: 1.5vw;
+  column-gap: 40px;
+
+  @media (max-width: 960px) {
+    column-gap: 20px;
+  }
 }
 
 .b-our-team__list {
@@ -38,6 +44,29 @@
 .b-person__item {
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 560px) {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+.b-person__item_grow-2 {
+  max-width: calc((100% - 120px) / 6 * 2);
+  width: 100%;
+
+  @media (max-width: 960px) {
+    max-width: calc((100% - 20px) / 3 * 2);
+  }
+}
+
+.b-person__item_grow-1 {
+  max-width: calc((100% - 120px) / 6 * 1);
+  width: 100%;
+
+  @media (max-width: 960px) {
+    max-width: calc((100% - 20px) / 3 * 1);
+  }
 }
 
 .b-person__photo {
@@ -207,12 +236,5 @@
 }
 
 .b-our-team__btn-wrapper {
-  padding-top: 90px;
   position: relative;
-  @media(max-width:800px){
-      padding-top: 60px;
-  }
-  @media(max-width:660px){
-      padding-top: 30px;
-  }
 }
