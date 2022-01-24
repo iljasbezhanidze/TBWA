@@ -21,11 +21,27 @@
   line-height: 1.6;
 
   & a {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
     color: #FECC00;
-    text-decoration: underline;
+    opacity: 1;
+    transition: all .3s;
+    position: relative;
 
-    &:hover {
-      text-decoration: none;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      height: 1px;
+      width: 0%;
+      background-color: #FECC00;
+      transition: width .3s;
+    }
+
+    &:hover::after {
+      width: 100%;
     }
   }
 }
