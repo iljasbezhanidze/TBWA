@@ -2,6 +2,7 @@
   display: block;
   width: 100%;
   outline: none;
+  position: relative;
 
   &:focus .b-field-file__inner {
     border-bottom: 2px solid #FECC00;
@@ -11,11 +12,12 @@
 }
 
 .b-field-file__input {
-  z-index: 0;
-  opacity: 0;
+  position: relative;
+  z-index: 1;
+  opacity: 1;
   outline: none;
-  max-width: 0;
-  max-height: 0;
+  width: 100%;
+  height: 90px;
   overflow: hidden;
 
   &:focus ~ .b-field-file__inner {
@@ -23,13 +25,22 @@
     color: #000;
     opacity: 1;
   }
+
+  @media (max-width: 560px) {
+    height: 120px;
+  }
 }
 
 .b-field-file__inner {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   z-index: 2;
   display: flex;
   width: 100%;
+  height: 90px;
   background-color: #F2F2F2;
   transition: all .2s;
   padding: 30px;
@@ -37,20 +48,10 @@
   border-bottom: 2px solid transparent;
   border-radius: 0;
   outline: transparent;
-  max-height: 89px;
-  // 24px - body font size
-  // 1.58 - body line height
-  margin: calc(24px * -1.58) 0 0 0 !important;
-
-  @media (max-width: 810px) {
-    // 18px - body font size
-    // 1.58 - body line height
-    margin: calc(18px * -1.58) 0 0 0 !important;
-  }
 
   @media (max-width: 560px) {
     flex-direction: column;
-    max-height: none;
+    height: 120px;
   }
 }
 
