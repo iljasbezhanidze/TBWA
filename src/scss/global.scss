@@ -120,8 +120,7 @@ body {
   transition: all linear 0.75s;
   position: relative;
   z-index: 15;
-  //margin-top: 185vh;
-  margin-top: 120vh;
+  margin-top: calc(100vh + 50px);
 }
 
 .b-main__section_bg-grey {
@@ -138,11 +137,11 @@ body {
   align-items: center;
 
   &_full-height {
-    min-height: 100vh;
-
-    @media (max-width: 1024px) {
-      min-height: 50vh;
-    }
+    //min-height: 100vh;
+    //
+    //@media (max-width: 1024px) {
+    //  min-height: 50vh;
+    //}
   }
   //z-index: 2;
   //position: relative;

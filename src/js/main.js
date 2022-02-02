@@ -351,9 +351,12 @@ document.addEventListener('DOMContentLoaded', e => {
       if (!this.first) return false
       this.other = document.querySelector('.b-main__other')
       if (!this.other) return false
+      this.other.style.transitionDuration = '0.4s'
       this.skewBlock = document.querySelector('.b-main__skew-block')
       if (!this.skewBlock) return false
+      this.skewBlock.style.transitionDuration = '0.4s'
       this.offset = 38
+      this.status = 'show'
 
       this.init()
     }
@@ -361,9 +364,6 @@ document.addEventListener('DOMContentLoaded', e => {
     init() {
       this.listener()
       this.showHide()
-
-      // this.other.style.transform = `translate3d(-100vw, 0, 0)`
-      // this.skewBlock.style.transform = `translate3d(calc(-100vw - ${this.offset}vh), 0, 0)`
     }
 
     listener() {
@@ -375,20 +375,45 @@ document.addEventListener('DOMContentLoaded', e => {
     scrollHandle() {
       this.showHide()
       this.toggleBackgroundColor()
-      // let offset = Math.round(window.scrollY / window.innerHeight * 100)
-      // offset = offset >= 100 ? 100 : offset
-      // this.skewBlock.style.transform = `translate3d(calc(${offset - 100}vw - ${this.offset - (offset / 100 * this.offset)}vh), 0, 0)`
-      // this.other.style.transform = `translate3d(${offset - 100}vw, 0, 0)`
     }
 
     showHide() {
-      if (window.scrollY > (window.innerHeight / 2)) {
-        this.skewBlock.style.transform = `translate3d(0, 0, 0)`
-        this.other.style.transform = `translate3d(0, 0, 0)`
+      if (window.scrollY >= (window.innerHeight / 2)) {
+        this.show()
       } else {
-        this.skewBlock.style.transform = `translate3d(calc(-100vw - 38vh), 0, 0)`
-        this.other.style.transform = `translate3d(-200vw, 0, 0)`
+        this.hide()
       }
+    }
+
+    show() {
+      if (this.status === 'show') return false
+      this.skewBlock.style.transform = `translate3d(0, 0, 0)`
+      this.other.style.transform = `translate3d(0, 0, 0)`
+      this.status = 'show'
+
+      this.toggleBodyHidden()
+    }
+
+    hide() {
+      if (this.status === 'hide') return false
+      this.skewBlock.style.transform = `translate3d(calc(-100vw - 38vh), 0, 0)`
+      this.other.style.transform = `translate3d(-200vw, 0, 0)`
+      this.status = 'hide'
+    }
+
+    toggleBodyHidden() {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+      document.body.style.overflow = 'hidden'
+      document.body.style.paddingRight = `${scrollbarWidth}px`
+      document.querySelector('.b-header').style.paddingRight = `${scrollbarWidth}px`
+      setTimeout(() => {
+        window.scrollTo(0, window.innerHeight)
+        setTimeout(() => {
+          document.body.style.overflow = ''
+          document.body.style.paddingRight = ``
+          document.querySelector('.b-header').style.paddingRight = ''
+        }, 300)
+      }, 100)
     }
 
     toggleBackgroundColor() {
@@ -573,6 +598,41 @@ document.addEventListener('DOMContentLoaded', e => {
     }
   }
 
+  class FileInput {
+    #container;
+    #input;
+    #nameElement;
+
+    constructor(container) {
+      this.#container = container
+      this.#input = this.#container.querySelector('input[type="file"]')
+      this.#nameElement = this.#container.querySelector('.b-field-file__name')
+
+      this.#init()
+    }
+
+    #init() {
+      this.#listeners()
+    }
+
+    #listeners() {
+      this.#input.addEventListener('input', e => {
+        this.#inputInputHandle()
+      })
+    }
+
+    #inputInputHandle() {
+      if (!this.#input?.files) return false
+      const files = this.#input.files
+      const file = files[0]
+      this.#setFileName(file.name)
+    }
+
+    #setFileName(name) {
+      this.#nameElement.innerHTML = name
+    }
+  }
+
   new HomeCoverParallax()
   new ShowHideOtherSite()
   new ImagesScrollScale()
@@ -581,5 +641,10 @@ document.addEventListener('DOMContentLoaded', e => {
   const allVideoBlockOnThePage = document.querySelectorAll('[data-video-block]')
   for (let i = 0; i < allVideoBlockOnThePage.length; i++) {
     new VideoPlayer(allVideoBlockOnThePage[i])
+  }
+
+  const allFileInputOnPage = document.querySelectorAll('[data-fileinput]')
+  for (let i = 0; i < allFileInputOnPage.length; i++) {
+    new FileInput(allFileInputOnPage[i])
   }
 })
