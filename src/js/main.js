@@ -602,11 +602,13 @@ document.addEventListener('DOMContentLoaded', e => {
     #container;
     #input;
     #nameElement;
+    #saveNameElementHTML;
 
     constructor(container) {
       this.#container = container
       this.#input = this.#container.querySelector('input[type="file"]')
       this.#nameElement = this.#container.querySelector('.b-field-file__name')
+      this.#saveNameElementHTML = this.#nameElement.innerHTML
 
       this.#init()
     }
@@ -625,7 +627,15 @@ document.addEventListener('DOMContentLoaded', e => {
       if (!this.#input?.files) return false
       const files = this.#input.files
       const file = files[0]
+      if (!file) {
+        this.#clearName()
+        return false
+      }
       this.#setFileName(file.name)
+    }
+
+    #clearName() {
+      this.#nameElement.innerHTML = this.#saveNameElementHTML
     }
 
     #setFileName(name) {
