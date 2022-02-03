@@ -8,6 +8,10 @@
 .b-order-form__item {
   margin: 10px;
   width: calc(50% - 20px);
+
+  @media (max-width: 560px) {
+    width: 100%;
+  }
 }
 
 .b-order-form__item_full {

@@ -39,7 +39,11 @@
 @import "./components/order-form";
 @import "./components/field";
 @import "./components/field-file";
+@import "./components/table";
 
+body {
+  //min-width: 360px;
+}
 
 .b-diagonal.b-diagonal_btn .b-diagonal__btn,  //b-diagonal_btn
 .b-first-screen.b-first-screen_subtitle .b-first-screen__subtitle,  //b-first-screen_subtitle

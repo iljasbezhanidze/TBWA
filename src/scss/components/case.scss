@@ -55,11 +55,21 @@
   align-items: center;
   column-gap: 60px;
   row-gap: 60px;
+
+  @media (max-width: 560px) {
+    margin-bottom: 40px;
+    column-gap: 40px;
+    row-gap: 40px;
+  }
 }
 
 .b-award {
   display: flex;
   align-items: center;
+
+  @media (max-width: 560px) {
+    margin-bottom: 0 !important;
+  }
 }
 
 .b-award__img {
@@ -70,6 +80,20 @@
 
 .b-images_negative-margin {
   margin-top: -250px;
+}
+
+.b-images__item {
+  & img {
+    max-width: 100% !important;
+    min-width: 100% !important;
+    width: 100% !important;
+  }
+
+  @media (max-width: 560px) {
+    &:not(:last-child) {
+      margin-bottom: 40px !important;
+    }
+  }
 }
 
 .b-images__item:not(:last-child) {
@@ -170,7 +194,7 @@
 }
 
 .b-case-description .b-socials__link {
-  background-color: #fff;
+  //background-color: #fff;
 }
 
 

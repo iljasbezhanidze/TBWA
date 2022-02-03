@@ -54,6 +54,27 @@
   }
 }
 
+.b-header_white {
+  & .b-logo__img {
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+
+  &.b-toggle {
+    @media (max-width: 1200px) {
+      & .b-logo__img {
+        &:nth-child(1) {
+          display: none;
+        }
+        &:nth-child(2) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
 .b-header_white .b-lang {
   color: #fff;
 }

@@ -237,4 +237,8 @@
 
 .b-our-team__btn-wrapper {
   position: relative;
+
+  @media (max-width: 560px) {
+    padding-left: 0;
+  }
 }

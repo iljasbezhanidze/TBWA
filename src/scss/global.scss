@@ -103,11 +103,11 @@ body {
     border-color: transparent transparent transparent #ffffff;
   }
 
-  &_bgc-gray {
-    &:after {
-      border-color: transparent transparent transparent rgb(242, 242, 242);
-
-    }
+  &_bgc-grey {
+    //background-color: rgb(242, 242, 242);
+    //&:after {
+    //  border-color: transparent transparent transparent rgb(242, 242, 242);
+    //}
   }
 }
 
@@ -392,7 +392,7 @@ body {
 
 .b-btn {
   margin-left: 15px;
-  padding: 19px 80px;
+  padding: 19px 80px !important;
   background-color: transparent;
   color: #fff;
   white-space: nowrap;
@@ -433,7 +433,11 @@ body {
 
   @media(max-width: 660px) {
     font-size: 18px;
-    padding: 14px 44px;
+    padding: 14px 44px !important;
+  }
+
+  @media (max-width: 560px) {
+    margin-left: 0;
   }
 }
 

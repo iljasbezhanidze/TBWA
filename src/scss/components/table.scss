@@ -1,0 +1,8 @@
+.b-table {
+  overflow: auto;
+  & table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 560px;
+  }
+}
