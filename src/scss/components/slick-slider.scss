@@ -1,6 +1,10 @@
 .b-slick-slider {
   width: 100%;
   overflow: hidden;
+
+  & * {
+    outline: none !important;
+  }
 }
 
 .b-slick-slider__list {

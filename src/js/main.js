@@ -207,91 +207,97 @@ document.addEventListener('DOMContentLoaded', e => {
 
 //---SLIDERS---
 //init slider (width articles)
-var swiperBlog = new Swiper(".mySwiperBlog", {
-  observer: true,
-  observeParents: true,
-  slidesPerView: 1,
-  spaceBetween: 20,
-  loop: true,
-  breakpoints: {
-    1280: {
-      slidesPerView: 3,
-      spaceBetween: 30,
+if (document.querySelector('.mySwiperBlog')) {
+  var swiperBlog = new Swiper(".mySwiperBlog", {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    breakpoints: {
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      1170: {
+        slidesPerView: 3,
+      },
+      960: {
+        spaceBetween: 40,
+        slidesPerView: 2,
+      },
+      780: {
+        spaceBetween: 0,
+        slidesPerView: 1,
+      }
     },
-    1170: {
-      slidesPerView: 3,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
-    960: {
-      spaceBetween: 40,
-      slidesPerView: 2,
-    },
-    780: {
-      spaceBetween: 0,
-      slidesPerView: 1,
-    }
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+  });
+}
 
-
-var swiperArticle = new Swiper(".mySwiperArticle", {
-  observer: true,
-  observeParents: true,
-  slidesPerView: 1,
-  spaceBetween: 0,
-  loop: true,
-  breakpoints: {
-    960: {
-      spaceBetween: 30,
-      slidesPerView: 1.3
+if (document.querySelector('.mySwiperArticle')) {
+  var swiperArticle = new Swiper(".mySwiperArticle", {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    breakpoints: {
+      960: {
+        spaceBetween: 30,
+        slidesPerView: 1.3
+      },
     },
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+}
 
 
 //slider (different size pictures)
-try {
-  let mySwiper = null
+if (document.querySelector('.mySwiper_team')) {
+  try {
+    let mySwiper = null
 
-  const initTeamSlider = () => {
-    if (window.innerWidth < 800) {
-      mySwiper = new Swiper(".mySwiper_team", {
-        observer: true,
-        observeParents: true,
-        slidesPerView: 'auto',
-        spaceBetween: 30,
-        centeredSlides: true,
-        // loop: true,
-        breakpoints: {
-          800: {
-            spaceBetween: 60,
-            slidesPerView: 4
+    const initTeamSlider = () => {
+      if (window.innerWidth < 800) {
+        mySwiper = new Swiper(".mySwiper_team", {
+          observer: true,
+          observeParents: true,
+          slidesPerView: 'auto',
+          spaceBetween: 30,
+          centeredSlides: true,
+          // loop: true,
+          breakpoints: {
+            800: {
+              spaceBetween: 60,
+              slidesPerView: 4
+            },
           },
-        },
-      });
-    } else {
-      if (mySwiper?.destroy) {
-        mySwiper.destroy(false, true)
-        mySwiper.detachEvents()
-        mySwiper.disable()
-        mySwiper = undefined
+        });
+      } else {
+        if (mySwiper?.destroy) {
+          mySwiper.destroy(false, true)
+          mySwiper.detachEvents()
+          mySwiper.disable()
+          mySwiper = undefined
+        }
       }
     }
-  }
-  //init & destroy slider (different size pictures) depending on viewport width
-  window.addEventListener('resize', e => {
+    //init & destroy slider (different size pictures) depending on viewport width
+    window.addEventListener('resize', e => {
+      initTeamSlider()
+    })
     initTeamSlider()
-  })
-  initTeamSlider()
-} catch {
+  } catch {
+  }
 }
+
 
 document.addEventListener('DOMContentLoaded', e => {
   class HomeCoverParallax {

@@ -110,6 +110,16 @@
 .b-menu__list-item {
   width: 100%;
   transition: all .3s;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    right: 100%;
+    top: 0;
+  }
 
   .b-menu__list-link {
     font-size: 6.4vh;
@@ -119,6 +129,10 @@
   &:hover {
     color: #FECC00;
     transform: translateX(30px);
+
+    &:after {
+      width: 30px;
+    }
   }
 
   &.active {
