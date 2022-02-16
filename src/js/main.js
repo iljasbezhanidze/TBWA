@@ -556,7 +556,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
     scrollHandle() {
       const currentScrollY = window.scrollY
-      if (currentScrollY > this.lastScrollY) {
+      if (currentScrollY > this.lastScrollY && currentScrollY > 100) {
         this.header.classList.add('hide')
       } else {
         this.header.classList.remove('hide')
@@ -569,6 +569,8 @@ document.addEventListener('DOMContentLoaded', e => {
         this.header.classList.remove('bgc-dark')
         this.header.classList.remove('small')
       }
+
+      console.log(currentScrollY)
 
       this.lastScrollY = currentScrollY
     }
@@ -653,6 +655,16 @@ document.addEventListener('DOMContentLoaded', e => {
   new ShowHideOtherSite()
   new ImagesScrollScale()
   new Header()
+
+  const autoplayVideo = () => {
+    const allVideoWithAutoplayAttributeOnPage = document.querySelectorAll('video[autoplay]')
+    setTimeout(() => {
+      for(let i = 0; i < allVideoWithAutoplayAttributeOnPage.length; i++) {
+        allVideoWithAutoplayAttributeOnPage[i].play()
+      }
+    }, ((1000 / 60) * 5))
+  }
+  autoplayVideo()
 
   const allVideoBlockOnThePage = document.querySelectorAll('[data-video-block]')
   for (let i = 0; i < allVideoBlockOnThePage.length; i++) {
